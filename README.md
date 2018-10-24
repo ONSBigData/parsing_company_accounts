@@ -28,7 +28,7 @@ accounts.
 
 Schema of returned python dict object:
 
-```python
+```
 	{doc_name: <original file name>,
 	doc_type: <file ending, html or xml>,
 	doc_upload_date: <date of upload>,
