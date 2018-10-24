@@ -28,7 +28,7 @@ accounts.
 
 Schema of returned python dict object:
 
-'''python
+```python
 	{doc_name: <original file name>,
 	doc_type: <file ending, html or xml>,
 	doc_upload_date: <date of upload>,
@@ -46,7 +46,7 @@ Schema of returned python dict object:
 				occurence_index: <indexing of order of discovery of elements with this name>}
 				...
 				...]}
-'''
+```
 
 # Parsing company accounts data (image)
 
