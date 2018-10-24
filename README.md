@@ -2,8 +2,13 @@
 
 The goal of the project in general is to be able to extract accounts
 data from any company balance sheet from Companies House including those
-submitted as an image/scan only.  Ultimately we want to be able to
-retrive the variables needed to fill out the summary equation:
+submitted as an image/scan only.  
+
+This repository exists so that others can join in on making this data
+accessible.
+
+Ultimately we want to be able to retrive the variables needed to fill
+out the summary equation:
 
 Assets = Liabilities + Shareholders' Equity
 
@@ -23,7 +28,7 @@ accounts.
 
 Schema of returned python dict object:
 
-'''
+'''python
 	{doc_name: <original file name>,
 	doc_type: <file ending, html or xml>,
 	doc_upload_date: <date of upload>,
