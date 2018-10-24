@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/stylesheet/CH-AE-dormant-stylesheet.xsl'?>
+<xbrli:xbrl xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:gc="http://www.xbrl.org/uk/fr/gcd/2004-12-01" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pt="http://www.xbrl.org/uk/fr/gaap/pt/2004-12-01" xmlns:ae="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:schemaRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/uk-gaap-ae-2009-06-21.xsd" xlink:type="simple"/>
+  <pt:ShareholderFunds decimals="0" unitRef="GBP" contextRef="e2018-02-28">3</pt:ShareholderFunds>
+  <pt:ShareholderFunds decimals="0" unitRef="GBP" contextRef="e2017-02-28">3</pt:ShareholderFunds>
+  <pt:ApprovalDetails>
+    <pt:NameApprovingDirector contextRef="y2018-02-28">Mr Anthony Dennis Parfitt</pt:NameApprovingDirector>
+  </pt:ApprovalDetails>
+  <pt:DetailsOrdinarySharesAllotted>
+    <pt:TypeOrdinaryShare contextRef="y2018-02-28">Ordinary</pt:TypeOrdinaryShare>
+    <pt:ParValueOrdinaryShare decimals="0" contextRef="y2018-02-28" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+    <pt:ValueOrdinarySharesAllotted decimals="0" contextRef="e2018-02-28" unitRef="GBP">3</pt:ValueOrdinarySharesAllotted>
+    <pt:ValueOrdinarySharesAllotted decimals="0" contextRef="e2017-02-28" unitRef="GBP">3</pt:ValueOrdinarySharesAllotted>
+    <pt:NumberOrdinarySharesAllotted decimals="0" contextRef="e2018-02-28" unitRef="shares">3</pt:NumberOrdinarySharesAllotted>
+    <pt:NumberOrdinarySharesAllotted decimals="0" contextRef="e2017-02-28" unitRef="shares">3</pt:NumberOrdinarySharesAllotted>
+  </pt:DetailsOrdinarySharesAllotted>
+  <pt:EquityAuthorisedDetails>
+    <pt:TypeOrdinaryShare contextRef="y2018-02-28">Ordinary</pt:TypeOrdinaryShare>
+    <pt:NumberOrdinarySharesAuthorised decimals="0" unitRef="shares" contextRef="e2018-02-28">3</pt:NumberOrdinarySharesAuthorised>
+    <pt:ParValueOrdinaryShare decimals="0" contextRef="y2018-02-28" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+  </pt:EquityAuthorisedDetails>
+  <gc:EntityNames>
+    <gc:EntityCurrentLegalName contextRef="y2018-02-28">Futronics IoT Limited</gc:EntityCurrentLegalName>
+  </gc:EntityNames>
+  <ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies contextRef="y2018-02-28">true</ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies>
+  <ae:CompanyDormant contextRef="y2018-02-28">true</ae:CompanyDormant>
+  <ae:CompaniesHouseRegisteredNumber contextRef="y2018-02-28">10021797</ae:CompaniesHouseRegisteredNumber>
+  <ae:CompaniesHouseDocumentAuthentication contextRef="y2018-02-28">      </ae:CompaniesHouseDocumentAuthentication>
+  <gc:BalanceSheetDate contextRef="e2018-02-28">2018-02-28</gc:BalanceSheetDate>
+  <pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset decimals="0" contextRef="e2018-02-28" unitRef="GBP">0</pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset>
+  <pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset decimals="0" contextRef="e2017-02-28" unitRef="GBP">0</pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset>
+  <pt:CashBankInHand decimals="0" unitRef="GBP" contextRef="e2018-02-28">3</pt:CashBankInHand>
+  <pt:CashBankInHand decimals="0" unitRef="GBP" contextRef="e2017-02-28">3</pt:CashBankInHand>
+  <pt:NetAssetsLiabilitiesIncludingPensionAssetLiability decimals="0" unitRef="GBP" contextRef="e2018-02-28">3</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+  <pt:NetAssetsLiabilitiesIncludingPensionAssetLiability decimals="0" unitRef="GBP" contextRef="e2017-02-28">3</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+  <pt:OrdinarySharesIssuedInPeriod-Details>
+    <pt:TotalNumberSharesIssued decimals="0" contextRef="y2018-02-28" unitRef="shares">0</pt:TotalNumberSharesIssued>
+    <pt:TotalNominalValue decimals="0" contextRef="y2018-02-28" unitRef="GBP">0</pt:TotalNominalValue>
+    <pt:TotalConsideration decimals="0" unitRef="GBP" contextRef="y2018-02-28">0</pt:TotalConsideration>
+  </pt:OrdinarySharesIssuedInPeriod-Details>
+  <ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006 contextRef="y2018-02-28">true</ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006>
+  <ae:MembersHaveNotRequiredCompanyToObtainAnAudit contextRef="y2018-02-28">true</ae:MembersHaveNotRequiredCompanyToObtainAnAudit>
+  <ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct contextRef="y2018-02-28">true</ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct>
+  <pt:DateApproval contextRef="e2018-02-28">2018-03-27</pt:DateApproval>
+  <xbrli:context id="y2018-02-28">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2017-03-01</xbrli:startDate>
+      <xbrli:endDate>2018-02-28</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="s2017-03-01">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2017-03-01</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="e2018-02-28">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2018-02-28</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="y2017-02-28">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2016-02-23</xbrli:startDate>
+      <xbrli:endDate>2017-02-28</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="s2016-02-23">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2016-02-23</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="e2017-02-28">
+    <xbrli:entity>
+      <xbrli:identifier scheme="Futronics IoT Limited/results">Futronics IoT Limited</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2017-02-28</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="GBP">
+    <xbrli:measure>iso4217:GBP</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="shares">
+    <xbrli:measure>xbrli:shares</xbrli:measure>
+  </xbrli:unit>
+<ae:DateAccountsReceived contextRef="e2018-02-28">2018-05-03</ae:DateAccountsReceived></xbrli:xbrl>

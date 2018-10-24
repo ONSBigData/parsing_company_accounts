@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/stylesheet/CH-AE-dormant-stylesheet.xsl" ?>
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ae="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21" xmlns:gc="http://www.xbrl.org/uk/fr/gcd/2004-12-01" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:pt="http://www.xbrl.org/uk/fr/gaap/pt/2004-12-01" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:schemaRef xlink:href="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/uk-gaap-ae-2009-06-21.xsd" xlink:type="simple"/>
+  <ae:CompanyDormant contextRef="y2018">true</ae:CompanyDormant>
+  <ae:CompaniesHouseRegisteredNumber contextRef="y2018">09565604</ae:CompaniesHouseRegisteredNumber>
+  <ae:CompaniesHouseDocumentAuthentication contextRef="y2018">      </ae:CompaniesHouseDocumentAuthentication>
+  <gc:EntityNames>
+    <gc:EntityCurrentLegalName contextRef="y2018">TIVENS INVEST LIMITED</gc:EntityCurrentLegalName>
+  </gc:EntityNames>
+  <gc:BalanceSheetDate contextRef="e2018">2018-04-30</gc:BalanceSheetDate>
+  
+  <pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset precision="INF" contextRef="e2018" unitRef="GBP">0</pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset>
+  <pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset precision="INF" contextRef="e2017" unitRef="GBP">0</pt:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset>
+  <pt:CashBankInHand precision="INF" contextRef="e2018" unitRef="GBP">100</pt:CashBankInHand>
+  <pt:CashBankInHand precision="INF" contextRef="e2017" unitRef="GBP">100</pt:CashBankInHand>
+  <pt:NetAssetsLiabilitiesIncludingPensionAssetLiability precision="INF" contextRef="e2018" unitRef="GBP">100</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+  <pt:NetAssetsLiabilitiesIncludingPensionAssetLiability precision="INF" contextRef="e2017" unitRef="GBP">100</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+  <pt:EquityAuthorisedDetails>
+    <pt:TypeOrdinaryShare contextRef="y2018">ORDINARY SHARES</pt:TypeOrdinaryShare>
+    <pt:NumberOrdinarySharesAuthorised precision="INF" contextRef="e2018" unitRef="shares">100</pt:NumberOrdinarySharesAuthorised>
+    <pt:ParValueOrdinaryShare precision="INF" contextRef="y2018" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+  </pt:EquityAuthorisedDetails>
+  <pt:DetailsOrdinarySharesAllotted>
+    <pt:TypeOrdinaryShare contextRef="y2018">ORDINARY SHARES</pt:TypeOrdinaryShare>
+    <pt:ParValueOrdinaryShare precision="INF" contextRef="y2018" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+    <pt:ValueOrdinarySharesAllotted precision="INF" contextRef="e2018" unitRef="GBP">100</pt:ValueOrdinarySharesAllotted>
+    <pt:ValueOrdinarySharesAllotted precision="INF" contextRef="e2017" unitRef="GBP">100</pt:ValueOrdinarySharesAllotted>	
+    <pt:NumberOrdinarySharesAllotted precision="INF" contextRef="e2018" unitRef="shares">100</pt:NumberOrdinarySharesAllotted>
+    <pt:NumberOrdinarySharesAllotted precision="INF" contextRef="e2017" unitRef="shares">100</pt:NumberOrdinarySharesAllotted>	
+  </pt:DetailsOrdinarySharesAllotted>
+  <!--<ae:CompanyHasActedAsAnAgentDuringPeriod contextRef='y2018'>true</ae:CompanyHasActedAsAnAgentDuringPeriod>-->
+  <ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006 contextRef="y2018">true</ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006>
+  <ae:MembersHaveNotRequiredCompanyToObtainAnAudit contextRef="y2018">true</ae:MembersHaveNotRequiredCompanyToObtainAnAudit>
+  <ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct contextRef="y2018">true</ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct>
+  <ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies contextRef="y2018">true</ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies>
+  <pt:DateApproval contextRef="e2018">2018-05-03</pt:DateApproval>
+  <pt:ApprovalDetails>
+    <pt:NameApprovingDirector contextRef="y2018">JONAS VIKTORSSON</pt:NameApprovingDirector>
+  </pt:ApprovalDetails>
+  <pt:ShareholderFunds precision="INF" contextRef="e2018" unitRef="GBP">100</pt:ShareholderFunds>
+  <pt:ShareholderFunds precision="INF" contextRef="e2017" unitRef="GBP">100</pt:ShareholderFunds>
+  <pt:TotalNumberSharesIssued precision="INF" contextRef="y2018" unitRef="shares">100</pt:TotalNumberSharesIssued>
+  <!--<pt:TotalNumberSharesIssued precision='INF' contextRef='y2017' unitRef='shares'>100</pt:TotalNumberSharesIssued>-->  
+  <pt:TotalNominalValue precision="INF" contextRef="y2018" unitRef="GBP">100</pt:TotalNominalValue>
+  <pt:TotalConsideration precision="INF" contextRef="y2018" unitRef="GBP">100</pt:TotalConsideration>
+  
+  <unit id="shares">
+    <measure>xbrli:shares</measure>
+  </unit>
+  <unit id="GBP">
+    <measure>iso4217:GBP</measure>
+  </unit>
+  <unit id="pounds">
+    <measure>iso4217:GBP</measure>
+  </unit>
+  <!--
+  <unit id='kroner'>
+    <measure>iso4217:NOK</measure>
+  </unit>
+  -->
+  <unit id="NOK">
+    <measure>iso4217:NOK</measure>
+  </unit> 
+  <unit id="SEK">
+    <measure>iso4217:SEK</measure>
+  </unit> 
+  <unit id="USD">
+    <measure>iso4217:USD</measure>
+  </unit>
+  <unit id="EUR">
+    <measure>iso4217:EUR</measure>
+  </unit>  
+  <context id="y2018">
+    <entity>
+      <identifier scheme="no-energy/results">No Energy Ltd</identifier>
+    </entity>
+    <period>
+      <startDate>2017-05-01</startDate>
+      <endDate>2018-04-30</endDate>
+    </period>
+  </context>
+  <context id="y2017">
+    <entity>
+      <identifier scheme="no-energy/results">No Energy Ltd</identifier>
+    </entity>
+    <period>
+      <startDate>2016-05-01</startDate>
+      <endDate>2017-04-30</endDate>
+    </period>
+  </context>
+  <context id="e2017">
+    <entity>
+      <identifier scheme="no-energy/results">No Energy Ltd</identifier>
+    </entity>
+    <period>
+      <instant>2017-04-30</instant>
+    </period>
+  </context>
+  <context id="e2018">
+    <entity>
+      <identifier scheme="no-energy/results">No Energy Ltd</identifier>
+    </entity>
+    <period>
+      <instant>2018-04-30</instant>
+    </period>
+  </context>
+<ae:DateAccountsReceived contextRef="e2018">2018-05-03</ae:DateAccountsReceived></xbrl>

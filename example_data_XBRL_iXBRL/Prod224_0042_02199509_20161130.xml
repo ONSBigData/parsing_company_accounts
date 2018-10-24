@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/stylesheet/CH-AE-dormant-stylesheet.xsl" ?>
+<xbrl xmlns="http://www.xbrl.org/2003/instance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ae="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21" xmlns:gc="http://www.xbrl.org/uk/fr/gcd/2004-12-01" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:pt="http://www.xbrl.org/uk/fr/gaap/pt/2004-12-01" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink"><link:schemaRef xlink:href="http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/uk-gaap-ae-2009-06-21.xsd" xlink:type="simple"/>
+<ae:CompanyDormant contextRef="y1">true</ae:CompanyDormant>
+<ae:CompaniesHouseRegisteredNumber contextRef="y1">02199509</ae:CompaniesHouseRegisteredNumber>
+<gc:EntityNames>
+<gc:EntityCurrentLegalName contextRef="y1">PRICE &amp; CLEWS LIMITED</gc:EntityCurrentLegalName>
+</gc:EntityNames>
+<gc:BalanceSheetDate contextRef="e1">2016-11-30</gc:BalanceSheetDate>
+<pt:CashBankInHand decimals="2" contextRef="e1" unitRef="GBP">100</pt:CashBankInHand>
+<pt:CashBankInHand decimals="2" contextRef="e2" unitRef="GBP">100</pt:CashBankInHand>
+<pt:NetAssetsLiabilitiesIncludingPensionAssetLiability decimals="2" contextRef="e1" unitRef="GBP">100</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+<pt:NetAssetsLiabilitiesIncludingPensionAssetLiability decimals="2" contextRef="e2" unitRef="GBP">100</pt:NetAssetsLiabilitiesIncludingPensionAssetLiability>
+<pt:EquityAuthorisedDetails>
+<pt:TypeOrdinaryShare contextRef="y1">Ordinary shares</pt:TypeOrdinaryShare>
+<pt:NumberOrdinarySharesAuthorised precision="INF" contextRef="e1" unitRef="shares">100</pt:NumberOrdinarySharesAuthorised>
+<pt:ParValueOrdinaryShare decimals="2" contextRef="y1" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+</pt:EquityAuthorisedDetails>
+<pt:DetailsOrdinarySharesAllotted>
+<pt:TypeOrdinaryShare contextRef="y1">Ordinary shares</pt:TypeOrdinaryShare>
+<pt:ParValueOrdinaryShare decimals="2" contextRef="y1" unitRef="GBP">1</pt:ParValueOrdinaryShare>
+<pt:ValueOrdinarySharesAllotted decimals="2" contextRef="e1" unitRef="GBP">100</pt:ValueOrdinarySharesAllotted>
+<pt:ValueOrdinarySharesAllotted decimals="2" contextRef="e2" unitRef="GBP">100</pt:ValueOrdinarySharesAllotted>
+<pt:NumberOrdinarySharesAllotted precision="INF" contextRef="e1" unitRef="shares">100</pt:NumberOrdinarySharesAllotted>
+<pt:NumberOrdinarySharesAllotted precision="INF" contextRef="e2" unitRef="shares">100</pt:NumberOrdinarySharesAllotted>
+</pt:DetailsOrdinarySharesAllotted>
+<ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006 contextRef="y1">true</ae:CompanyEntitledToExemptionUnderSection480CompaniesAct2006>
+<ae:MembersHaveNotRequiredCompanyToObtainAnAudit contextRef="y1">true</ae:MembersHaveNotRequiredCompanyToObtainAnAudit>
+<ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct contextRef="y1">true</ae:DirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct>
+<ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies contextRef="y1">true</ae:AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies>
+<ae:CompaniesHouseDocumentAuthentication contextRef="y1">      </ae:CompaniesHouseDocumentAuthentication>
+<pt:DateApproval contextRef="e1">2017-05-24</pt:DateApproval>
+<pt:ApprovalDetails>
+<pt:NameApprovingDirector contextRef="y1">CHARLES PRICE</pt:NameApprovingDirector>
+</pt:ApprovalDetails>
+<pt:ShareholderFunds decimals="2" contextRef="e1" unitRef="GBP">100</pt:ShareholderFunds>
+<pt:ShareholderFunds decimals="2" contextRef="e2" unitRef="GBP">100</pt:ShareholderFunds>
+<unit id="shares"><measure>xbrli:shares</measure></unit>
+<unit id="pure"><measure>xbrli:pure</measure></unit>
+<unit id="GBP"><measure>iso4217:GBP</measure></unit>
+<context id="y1">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<startDate>2015-12-01</startDate><endDate>2016-11-30</endDate></period>
+</context>
+<context id="y2">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<startDate>2014-12-01</startDate><endDate>2015-11-30</endDate></period>
+</context>
+<context id="s1">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<instant>2015-12-01</instant></period>
+</context>
+<context id="e1">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<instant>2016-11-30</instant></period>
+</context>
+<context id="s2">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<instant>2014-12-01</instant></period>
+</context>
+<context id="e2">
+<entity>
+<identifier scheme="price-and-clews-/results">PRICE &amp; CLEWS LIMITED</identifier></entity>
+<period>
+<instant>2015-11-30</instant></period>
+</context>
+<ae:DateAccountsReceived contextRef="e1">2017-05-24</ae:DateAccountsReceived></xbrl>
