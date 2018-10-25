@@ -196,10 +196,10 @@ def parse_element(soup, element):
 	
 	# Basic name and value
 	try:
-		# Method for XBRLi docs
+		# Method for XBRLi docs first
 		element_dict['name'] = element.attrs['name'].lower().split(":")[-1]
 	except:
-		# Method for XBRL docs
+		# Method for XBRL docs second
 		element_dict['name'] = element.name.lower().split(":")[-1]
 		
 	element_dict['value'] = element.get_text()
@@ -215,6 +215,27 @@ def parse_element(soup, element):
 		element_dict['value'] = clean_value(element_dict['value'])
 				
 	return(element_dict)
+
+
+
+def parse_elements(element_set, soup):
+	"""
+	For a set of discovered elements within a document, try to parse
+	them.  Only keep valid results (test is whether field "name"
+	exists).
+	
+	Keyword arguments:
+	element_set -- BeautifulSoup iterable search result object
+	soup -- BeautifulSoup object of accounts document
+	"""
+	elements = []
+	for each in element_set:
+		element_dict = parse_element(soup, each)
+		if 'name' in element_dict:
+			elements.append(element_dict)
+	return(elements)
+
+
 
 # REF UNDER DEVELOPMENT NOT YET IMPLEMENTED
 def hunt_summary_values(doc,
@@ -300,31 +321,63 @@ def scrape_elements(soup, filepath):
 	output: list of dicts
 	"""
 	
-	elements = []
-	
+	# Try multiple methods of retrieving data
 	# Sometimes the elements are embedded in an xbrl sub-structure
-	xbrl = soup.find_all("xbrl")
-	
-	if len(xbrl)==0:
-		xbrl = soup.find_all()
-	
-	# This deals with a further sub-structure I don't really understand
+	# I've found four variants that have to be tried so far
+	# At some point I should order them by likelihood to optimise
+	# processing speed
+	# I'm totally forgotten which of the five variants are for ixbrl,
+	# and which are for the older xbrl.
 	try:
+		xbrl = soup.find_all("xbrl")
 		element_set = xbrl.find_all()
-	
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
 	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all()
+		element_set = xbrl.find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all("xbrl")
 		element_set = xbrl[0].find_all()
-
-	# Go through every element and get the information I want
-	for each in element_set:
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all()
+		element_set = xbrl[0].find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+		try:
+		element_set = soup.find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
 		
-		element_dict = parse_element(soup, each)
-			
-		# Check if the element has a "name" attribute
-		if 'name' in element_dict:
-			elements.append(element_dict)
-
-	return(elements)
+	return(0)
 
 
 def process_account(filepath):
