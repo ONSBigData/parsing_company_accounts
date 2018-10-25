@@ -321,55 +321,51 @@ def scrape_elements(soup, filepath):
 	output: list of dicts
 	"""
 	
-	# Try multiple methods of retrieving data
-	# Sometimes the elements are embedded in an xbrl sub-structure
-	# I've found four variants that have to be tried so far
-	# At some point I should order them by likelihood to optimise
-	# processing speed
-	# I'm totally forgotten which of the five variants are for ixbrl,
-	# and which are for the older xbrl.
+	# Try multiple methods of retrieving data, I think only the first is
+	# now needed though.  The rest will be removed after testing this
+	# but should not affect execution speed.
 	try:
-		xbrl = soup.find_all("xbrl")
-		element_set = xbrl.find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all()
-		element_set = xbrl.find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all("xbrl")
-		element_set = xbrl[0].find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all()
-		element_set = xbrl[0].find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-		try:
 		element_set = soup.find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+		
+	try:
+		xbrl = soup.find_all("xbrl")
+		element_set = xbrl.find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all()
+		element_set = xbrl.find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all("xbrl")
+		element_set = xbrl[0].find_all()
+		elements = parse_elements(element_set, soup)
+		if len(elements) <= 5:
+			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
+		return(elements)
+	except:
+		pass
+	
+	try:
+		xbrl = soup.find_all()
+		element_set = xbrl[0].find_all()
 		elements = parse_elements(element_set, soup)
 		if len(elements) <= 5:
 			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
