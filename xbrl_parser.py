@@ -213,6 +213,16 @@ def parse_element(soup, element):
 	# If the value has a defined unit (eg a currency) convert to numeric	
 	if element_dict['unit'] != "NA":
 		element_dict['value'] = clean_value(element_dict['value'])
+		
+	# Retrieve sign of element if exists
+	try:
+		element_dict['sign'] = element.attrs['sign']
+		
+		# if it's negative, convert the value then and there
+		if element_dict['sign'].strip() == "-":
+			element_dict['value'] = 0.0 - element_dict['value']
+	except:
+		pass
 				
 	return(element_dict)
 
@@ -236,70 +246,103 @@ def parse_elements(element_set, soup):
 	return(elements)
 
 
-
-# REF UNDER DEVELOPMENT NOT YET IMPLEMENTED
-def hunt_summary_values(doc,
-						assets_list = ["netassetsliabilitiesincludingpensionasset",
-                                       "netassetsliabilityexcludingpensionasset",
-                                       "netassetsliabilities",
-                                       "totalassetslesscurrentliabilities",
-                                       "netcurrentassetsliabilities"],
-						equity_list = ["shareholderfunds",
-                                       "equity"],
-                        interest_list = ["creditors",
-                                         "debtors",
-                                         'accountstypefullorabbreviated',
-                                         'descriptionprincipalactivities',
-                                         'accountingstandardsapplied',
-                                         'entitytradingstatus',
-                                         'statementthatcompanyentitledtoexemptionfromauditundersection477companiesact2006relatingtosmallcompanies']):
-												
+def summarise_by_sum(doc, variable_names):
 	"""
 	Takes a document (dict) after extraction, and tries to extract
-	summary variables relating to the financial state of the enterprise.
-	Returns dict.
-	
-	The default values are included to save effort, and are correct at
-	the time of construction of these functions (11/10/2018).
+	a summary variable relating to the financial state of the enterprise
+	by summing all those named that exist.  Returns dict.
 	
 	Keyword arguments:
 	doc -- an extracted document dict, with "elements" entry as created
 	       by the 'scrape_clean_elements' functions.
-	assets_list -- variable names that are commonly used to mark
-	               net assets/liabilities, in prioritised order.
-	funds_list -- variable names that are commonly used to mark
-	              shareholder's equity, in prioritised order.
-	interest_list -- names of other variables that might be of interest
-	                 in aggregating data.  Eg;  Capital Reserves.
+	variable_names - variables to find and sum if they exist
 	"""
 	
+	# Convert elements to pandas df
+	df = pd.DataFrame(doc['elements'])
+	
+	# Subset to most recent (latest dated)
+	df = df[df['date'] == doc['doc_balancesheetdate']]
+
+	total_assets = 0.0
+	unit = "NA"
+	
+	# Find the total assets by summing components
+	for each in variable_names:
+		
+		# Fault-tolerant, will skip whatever isn't numeric
+		try:
+			total_assets = total_assets + df[df['name'] == each].iloc[0]['value']
+			
+			# Retrieve reporting unit if exists
+			unit = df[df['name'] == each].iloc[0]['unit']
+			break
+			
+		except:
+			pass
+	
+	return({"total_assets":total_assets, "unit":unit})
+	
+
+def summarise_by_priority(doc, variable_names):
+	"""
+	Takes a document (dict) after extraction, and tries to extract
+	a summary variable relating to the financial state of the enterprise
+	by looking for each named, in order.  Returns dict.
+	
+	Keyword arguments:
+	doc -- an extracted document dict, with "elements" entry as created
+	       by the 'scrape_clean_elements' functions.
+	variable_names - variables to find and check if they exist.
+	"""
+	
+	# Convert elements to pandas df
+	df = pd.DataFrame(doc['elements'])
+	
+	# Subset to most recent (latest dated)
+	df = df[df['date'] == doc['doc_balancesheetdate']]
+	
+	primary_assets = 0.0
+	unit = "NA"
+	
+	# Find the net asset/liability variable by hunting names in order
+	for each in variable_names:
+		try:
+			
+			# Fault tolerant, will skip whatever isn't numeric
+			primary_assets = df[df['name'] == each].iloc[0]['value']
+			
+			# Retrieve reporting unit if it exists
+			unit = df[df['name'] == each].iloc[0]['unit']
+			break
+		
+		except:
+			pass	
+	
+	return({"primary_assets":primary_assets, "unit":unit})
+
+
+def summarise_set(doc, variable_names):
+	"""
+	Takes a document (dict) after extraction, and tries to extract
+	summary variables relating to the financial state of the enterprise
+	by returning all those named that exist.  Returns dict.
+	
+	Keyword arguments:
+	doc -- an extracted document dict, with "elements" entry as created
+	       by the 'scrape_clean_elements' functions.
+	variable_names - variables to find and return if they exist.
+	"""
 	results = {}
 	
 	# Convert elements to pandas df
 	df = pd.DataFrame(doc['elements'])
+	
+	# Subset to most recent (latest dated)
 	df = df[df['date'] == doc['doc_balancesheetdate']]
 	
-	# Find the net asset/liability variable
-	for each in assets_list:
-		try:
-			results['net_assets_liabilities'] = df[df['name'] == each].iloc[0]['value']
-			results['balance_sheet_unit'] = df[df['name'] == each].iloc[0]['unit']
-			break
-		
-		except:
-			pass
-	
-	# Find the shareholder's equity/funds variable
-	for each in equity_list:
-		try:
-			results['shareholder_equity'] = df[df['name'] == each].iloc[0]['value']
-			break
-		
-		except:
-			pass
-	
-	# Find all the other variables  of interest should they exist
-	for each in interest_list:
+	# Find all the variables of interest should they exist
+	for each in variable_names:
 		try:
 			results[each] = df[df['name'] == each].iloc[0]['value']
 		
@@ -308,7 +351,7 @@ def hunt_summary_values(doc,
 	
 	# Send the variables back to be appended
 	return(results)
-	
+
 	
 def scrape_elements(soup, filepath):
 	"""
@@ -332,47 +375,7 @@ def scrape_elements(soup, filepath):
 		return(elements)
 	except:
 		pass
-		
-	try:
-		xbrl = soup.find_all("xbrl")
-		element_set = xbrl.find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all()
-		element_set = xbrl.find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all("xbrl")
-		element_set = xbrl[0].find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-	
-	try:
-		xbrl = soup.find_all()
-		element_set = xbrl[0].find_all()
-		elements = parse_elements(element_set, soup)
-		if len(elements) <= 5:
-			raise Exception("Elements should be gte 5, was {}".format(len(elements)))
-		return(elements)
-	except:
-		pass
-		
+
 	return(0)
 
 
