@@ -276,7 +276,6 @@ def summarise_by_sum(doc, variable_names):
 			
 			# Retrieve reporting unit if exists
 			unit = df[df['name'] == each].iloc[0]['unit']
-			break
 			
 		except:
 			pass
