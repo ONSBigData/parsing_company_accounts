@@ -13,7 +13,7 @@ out the summary equation:
 Assets = Liabilities + Shareholders' Equity
 
 
-# Parsing company accounts data (digital)
+# Parsing digital company accounts data
 
 The module xbrl_parser.py is for extracting data from xbrl company
 account documents, both XBRLi and older XBRL formats.  It's currently
@@ -48,6 +48,24 @@ Schema of returned python dict object:
 				...]}
 ```
 
-# Parsing company accounts data (image)
+# Parsing imaged company accounts data.
 
-Under construction
+Experimenting with reading tables from CH PDF records.  Note, you can't
+do much without Tesseract OCR version 4 (currently alpha) installed, and
+all of the system commands that call external software in these notebooks
+are set up for a linux machine.
+
+The example PDF's, drawn randomly from Companies House a while back, are
+in example_data_PDF directory.
+
+02_process_pdfs_to_data.ipynb uses Tesseract to "read" a pdf and convert it
+to a table of words with locations and confidences in the translation.  
+There's a lot in that notebook that  pre-processes images and fixes
+some quirks with how the PDF's are encoded.
+
+03_Developing_PDF_data_extraction.ipynb tries to extract useful 
+information out of the extracted, tabulated text content.  This is very
+much still under development, it's a mess of functions I'm playing with,
+but there's lots of comments...
+
+
