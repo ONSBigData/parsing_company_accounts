@@ -26,7 +26,12 @@ companies house accounts electronic records to play with as examples.
 extract_XBRL.ipynb hosts example usage of the module in extracting
 accounts.
 
-Schema of returned python dict object:
+The file example_extracted_XBRL_data.csv contains the results of 
+applying these methods to all of the example digital accounts files,
+flattened by a helper function into an SQL-friendly format.
+
+
+The software, before "flattening", returns a python dict object:
 
 ```
 	{doc_name: <original file name>,
