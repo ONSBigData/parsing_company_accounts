@@ -42,8 +42,7 @@ Schema of returned python dict object:
 	elements: [{name: <name found beginning with ix>,
 				value: <result of get_text() applied to element, parsed to numeric if unit exists>,
 				unit: <from unitref attribute, will follow reference and recognise USD, GBP and EUR>,
-				date: <from contextref attribute, will follow reference>,
-				occurence_index: <indexing of order of discovery of elements with this name>}
+				date: <from contextref attribute, will follow reference>}
 				...
 				...]}
 ```
@@ -69,3 +68,18 @@ much still under development, it's a mess of functions I'm playing with,
 but there's lots of comments...
 
 
+# To be fixed;
+
+"parsed" field should be False if no elements extracted from document. 
+Currently it's False only if the document can't be opened in the first 
+place.
+
+On switching to more elegant method of iterating through elements
+regardless of doc format, number of records with less than 5 numerical
+elements increased from 0.5 to 1 percent.  May be artefact of ingesting
+full years data but should be checked in case bug introduced.
+
+(For reference; num of records with few numerical entries has proven to
+be a good way of eyeballing data quality - there's too many edge cases 
+in terms of content and formats so there's no definitive sign when 
+things start to partially fail...)

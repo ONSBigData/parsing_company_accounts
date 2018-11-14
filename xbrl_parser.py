@@ -378,6 +378,32 @@ def scrape_elements(soup, filepath):
 	return(0)
 
 
+def flatten_data(doc):
+	"""
+	Takes the data returned by process account, with its tree-like
+	structure and reorganises it into a long-thin format table structure
+	suitable for SQL applications.
+	"""
+	
+	# Need to drop components later, so need copy in function
+	doc2 = doc.copy()
+	doc_df = pd.DataFrame()
+	
+	# Pandas should create series, then columns, from dicts when called
+	# like this
+	for element in doc2['elements']:
+		doc_df = doc_df.append(element, ignore_index=True)
+	
+	# Dump the "elements" entry in the doc dict
+	doc2.pop("elements")
+	
+	# Create uniform columns for all other properties
+	for key in doc2:
+		doc_df[key] = doc2[key]
+	
+	return(doc_df)
+	
+
 def process_account(filepath):
 	"""
 	Scrape all of the relevant information from
