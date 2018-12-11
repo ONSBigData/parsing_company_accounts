@@ -77,6 +77,126 @@ def convert_to_numeric(series):
 	return(numeric_series)
 
 
+def find_pages(dat, keystring):
+	"""
+	Filter to pages (using csv_num) that have a mention of a specific
+	phrase or word on any line.  This is meant to reduce the risk of the
+	software consulting the wrong table.
+	"""
+	
+	dat_agg = agg_level(dat, 4)
+	
+	dat_agg = dat_agg[dat_agg['text'].apply(lambda x: keystring in x.lower())]
+	
+	csv_numbers = dat_agg['csv_num'].unique()
+	
+	return(dat[dat['csv_num'].apply(lambda x: x in csv_numbers)])
+
+
+def determine_units_count(subset):
+	"""
+	Simplistic method that finds the units of numbers through counting
+	all strings that start with given units, and returning the most common.
+	"""
+	
+	units_regex = "[£$]|million|thousand|£m|£k|$m|$k"
+	
+	# Search for matches
+	subset['keyword_found'] = subset['text'].apply(lambda x: bool(re.match(units_regex, str(x))))
+	
+	subset = subset[subset['keyword_found']==True]
+	subset['count'] = 1
+	
+	# List and sort units by count
+	units=subset[["text", "count"]].\
+		  groupby("text").\
+		  count().\
+		  sort_values("count", ascending=False).\
+		  reset_index()
+	
+	print(units)
+	
+	# Return most common units
+	return( (units.loc[0, "text"], units.loc[0, "count"]) )
+
+
+def determine_years_count(subset, limits=[2000, 2050]):
+	"""
+	Simplistic method that finds the years for a document through
+	counting all year-format strings, finding the two most common and
+	seeing if the difference is only one as an arbitrary QA.
+	"""
+
+	# Search in the value range of interest
+	subset['keyword_found'] = (subset['numerical'] >= limits[0]) & (subset['numerical'] <= limits[1])
+	
+	subset = subset[subset['keyword_found']==True]
+	subset['count'] = 1
+	
+	candidates = subset[["numerical", "count"]].\
+						groupby("numerical").\
+						count().\
+						reset_index().\
+						sort_values("count", ascending=False)['numerical'][0:2].values
+	
+	if (candidates[0] - candidates[1]) == 1:
+		return(candidates)
+	
+	else:
+		return(0)
+	
+
+def aggregate_sentences_over_lines(dat):
+	"""
+	Aggregates all text marked as being in the same line.  Then finds
+	text that was split over multiple lines by checking if the line
+	starts with a capital letter or not.
+	"""
+	
+	dat_group = dat.groupby(["csv_num", "block_num",  "par_num", "line_num"])
+	
+	# Create aggregate line text
+	line_text = dat_group['text'].apply(lambda x: " ".join([str(e) for e in list(x)]).strip("nan "))
+	line_text = line_text.reset_index()
+	
+	# Create line bounding boxes for page
+	line_text['top'] = dat_group['top'].agg('min').reset_index()['top']
+	line_text['bottom'] = dat_group['bottom'].agg('max').reset_index()['bottom']
+	line_text['left'] = dat_group['left'].agg('min').reset_index()['left']
+	line_text['right'] = dat_group['right'].agg('max').reset_index()['right']
+	
+	# Identify lines that start with a lowercase letter.  Misses continued
+	# lines that start with a number.  If I cared, I would check if the
+	# previous line ended with a period.
+	line_text['continued_line'] = line_text['text'].apply(lambda x: np.where(re.search("^[a-z].*", x.strip()), True, False))
+	
+	# Find the sentences that start with a lowercase letter
+	results = pd.DataFrame()
+
+	row_of_interest = line_text.iloc[0,:]
+
+	for index, row in line_text.iterrows():
+    
+		if (row['continued_line']==True) & (index != 0) :
+        
+			# If continued line, update values
+			row_of_interest['text'] = row_of_interest['text'] + " " + row['text']
+			row_of_interest['bottom'] = row['bottom']
+			row_of_interest['left'] = min([row_of_interest['left'], row['left']])
+			row_of_interest['right'] = max([row_of_interest['right'], row['right']])
+    
+		else:
+			results = results.append(row_of_interest)
+			row_of_interest = row
+        
+	return(results.drop("continued_line", axis=1))
+
+
+########################################################################
+
+###  Everything beyond here's legacy code from the old approach ###
+
+########################################################################
 
 def agg_level(dat, level=4):
 	"""
@@ -310,70 +430,7 @@ def find_statistics(dat, keystring):
 	return(0)
 
 
-def find_pages(dat, keystring):
-	"""
-	Filter to pages (using csv_num) that have a mention of a specific
-	phrase or word on any line.  This is meant to reduce the risk of the
-	software consulting the wrong table.
-	"""
-	
-	dat_agg = agg_level(dat, 4)
-	
-	dat_agg = dat_agg[dat_agg['text'].apply(lambda x: keystring in x.lower())]
-	
-	csv_numbers = dat_agg['csv_num'].unique()
-	
-	return(dat[dat['csv_num'].apply(lambda x: x in csv_numbers)])
 
 
-def determine_years_count(subset, limits=[2000, 2050]):
-	"""
-	Simplistic method that finds the years for a document through
-	counting all year-format strings, finding the two most common and
-	seeing if the difference is only one as an arbitrary QA.
-	"""
 
-	# Search in the value range of interest
-	subset['keyword_found'] = (subset['numerical'] >= limits[0]) & (subset['numerical'] <= limits[1])
-	
-	subset = subset[subset['keyword_found']==True]
-	subset['count'] = 1
-	
-	candidates = subset[["numerical", "count"]].\
-						groupby("numerical").\
-						count().\
-						reset_index().\
-						sort_values("count", ascending=False)['numerical'][0:2].values
-	
-	if (candidates[0] - candidates[1]) == 1:
-		return(candidates)
-	
-	else:
-		return(0)
-	
 
-def determine_units_count(subset):
-	"""
-	Simplistic method that finds the units of numbers through counting
-	all strings that start with given units, and returning the most common.
-	"""
-	
-	units_regex = "[£$]|million|thousand|£m|£k|$m|$k"
-	
-	# Search for matches
-	subset['keyword_found'] = subset['text'].apply(lambda x: bool(re.match(units_regex, str(x))))
-	
-	subset = subset[subset['keyword_found']==True]
-	subset['count'] = 1
-	
-	# List and sort units by count
-	units=subset[["text", "count"]].\
-		  groupby("text").\
-		  count().\
-		  sort_values("count", ascending=False).\
-		  reset_index()
-	
-	print(units)
-	
-	# Return most common units
-	return( (units.loc[0, "text"], units.loc[0, "count"]) )
