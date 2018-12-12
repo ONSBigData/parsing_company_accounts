@@ -174,7 +174,8 @@ def aggregate_sentences_over_lines(dat):
 	results = pd.DataFrame()
 
 	row_of_interest = line_text.iloc[0,:]
-
+	
+	# Iterate through and aggregate any lines that are continued
 	for index, row in line_text.iterrows():
     
 		if (row['continued_line']==True) & (index != 0) :
@@ -188,7 +189,16 @@ def aggregate_sentences_over_lines(dat):
 		else:
 			results = results.append(row_of_interest)
 			row_of_interest = row
-        
+	
+	# Drop any entries where the text field contains a number
+	results = results[np.where(results['text'].apply(lambda x: re.search(".*[0-9].*", x)), False, True)]
+	
+	# Format the text field
+	results['text'] = results['text'].apply(lambda x: re.sub("[^a-z]+", "", x.lower()))
+	
+	# Drop any now-empty
+	results = results[results['text'].apply(lambda x: len(x.strip()) > 0)]
+	
 	return(results.drop("continued_line", axis=1))
 
 
