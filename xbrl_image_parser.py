@@ -190,10 +190,7 @@ def aggregate_sentences_over_lines(dat):
 			results = results.append(row_of_interest)
 			row_of_interest = row
 	
-	# Drop any entries where the text field contains a number
-	results = results[np.where(results['text'].apply(lambda x: re.search(".*[0-9].*", x)), False, True)]
-	
-	# Format the text field
+	# Format the text field, stripping any accidentally included numbers
 	results['text'] = results['text'].apply(lambda x: re.sub("[^a-z]+", "", x.lower()))
 	
 	# Drop any now-empty
