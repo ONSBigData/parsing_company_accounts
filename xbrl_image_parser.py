@@ -153,7 +153,9 @@ def aggregate_sentences_over_lines(dat):
 	starts with a capital letter or not.
 	"""
 	
-	dat_group = dat.groupby(["csv_num", "block_num",  "par_num", "line_num"])
+	dat_group = dat[dat['numerical'].isnull()]
+	
+	dat_group = dat_group.groupby(["csv_num", "block_num",  "par_num", "line_num"])
 	
 	# Create aggregate line text
 	line_text = dat_group['text'].apply(lambda x: " ".join([str(e) for e in list(x)]).strip("nan "))
