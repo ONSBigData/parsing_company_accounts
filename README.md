@@ -75,6 +75,10 @@ but there's lots of comments...
 
 # To be fixed;
 
+In xbrl_image_parset.py <- some kind of error in determining sentence 
+bounding boxes, getting the word "note" stretched across the page, and 
+multi-line sentences taking up negative space.
+
 "parsed" field should be False if no elements extracted from document. 
 Currently it's False only if the document can't be opened in the first 
 place.
