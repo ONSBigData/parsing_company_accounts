@@ -67,17 +67,19 @@ to a table of words with locations and confidences in the translation.
 There's a lot in that notebook that  pre-processes images and fixes
 some quirks with how the PDF's are encoded.
 
-03_Developing_PDF_data_extraction.ipynb tries to extract useful 
-information out of the extracted, tabulated text content.  This is very
-much still under development, it's a mess of functions I'm playing with,
-but there's lots of comments...
+03_Extract_PDF_data gathers variables from the balance sheet entries in
+the PDF by first narrowing to the pages likely to BE the balance sheet,
+then using a sophisticated regex (from https://github.com/drkane) to 
+get lines formatted with <some text> <number> <number> (simplified).
+I'm now working on reliably extracting the reporting unit from the PDF by
+searching for the most common element starting with £, $, EUR, and 
+whatever number of zeros after it.
+
+I'm assuming the dates of the records can be determined from metadata on
+the Companies House API, but haven't actually checked...
 
 
 # To be fixed;
-
-In xbrl_image_parset.py <- some kind of error in determining sentence 
-bounding boxes, getting the word "note" stretched across the page, and 
-multi-line sentences taking up negative space.
 
 "parsed" field should be False if no elements extracted from document. 
 Currently it's False only if the document can't be opened in the first 
