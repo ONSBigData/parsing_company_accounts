@@ -1,0 +1,370 @@
+,currYr,doc_companieshouseregisterednumber,label,lastYr,source,unit,year
+0,180,00002404,Intangible assets,137,Intangible assets 12 180 137,£000,2015.0
+1,"28,271",00002404,Tangible assets,"28,681","Tangible assets 13 28,271 28,681",£000,2015.0
+2,446,00002404,Stocks,405,Stocks 15 446 405,£000,2015.0
+3,"23,174",00002404,Debtors: amounts falling due within one year,"11,926","Debtors: amounts falling due within one year 16 23,174 11,926",£000,2015.0
+4,"10,208",00002404,Cash at bank and in hand,"10,565","Cash at bank and in hand 10,208 10,565",£000,2015.0
+5,"(10,936)",00002404,Creditors: amounts falling due within one year,"(7,527)","Creditors: amounts falling due within one year 17 (10,936) (7,527)",£000,2015.0
+6,"22,892",00002404,Net current assets,"15,369","Net current assets 22,892 15,369",£000,2015.0
+7,"51,346",00002404,Total assets less current liabilities,"44,190","Total assets less current liabilities 51,346 44,190",£000,2015.0
+8,"(2,620)",00002404,"""Creditors: amounts falling due after more than one year","(3,071)","than one year 18 (2,620) (3,071)",£000,2015.0
+9,(18),00002404,Pensions,(18),Pensions (18) (18),£000,2015.0
+10,"(2,128)",00002404,Pension liability,"(2,244)","Pension liability 23 (2,128) (2,244)",£000,2015.0
+11,"46,580",00002404,Net assets,"38,857","Net assets 46,580 38,857",£000,2015.0
+0,"5,245",00002404,Called up share capital,"5,245","Called up share capital 21 5,245 5,245",£000,2015.0
+1,"1,061",00002404,Revaluation reserve,"1,061","Revaluation reserve 20 1,061 1,061",£000,2015.0
+2,(677),00002404,Hedging reserve,(566),Hedging reserve 20 (677) (566),£000,2015.0
+3,"40,951",00002404,Profit and loss account  .,"33,117","Profit and loss account 20 . 40,951 33,117",£000,2015.0
+0,2015,868273,Note,2014,Note 2015 2014,£000,2015.0
+1,"48,556",868273,Intangible assets,"52,446","Intangible assets 10 48,556 52,446",£000,2015.0
+2,"65,032",868273,Tangible assets,"61,499","Tangible assets 13 65,032 61,499",£000,2015.0
+3,"569,073",868273,Investments in subsidiaries,"569,073","Investments in subsidiaries 11 569,073 569,073",£000,2015.0
+4,"6,133",868273,Investments in joint ventures and associates,"6,133","Investments in joint ventures and associates 12 6,133 6,133",£000,2015.0
+5,"101,367",868273,Stocks,"88,573","Stocks 14 101,367 88,573",£000,2015.0
+6,"1,301,011",868273,Debtors,"974,554","Debtors 1,301,011 974,554",£000,2015.0
+7,"29,192",868273,Cash and cash equivalents,"381,791","Cash and cash equivalents 17 29,192 381,791",£000,2015.0
+8,"2,121,164",868273,Total assets,"2,134,009","Total assets 2,121,164 2,134,009",£000,2015.0
+9,"1,239,528",868273,Creditors,"1,328,505","Creditors 1,239,528 1,328,505",£000,2015.0
+10,"192,042",868273,Net current assets,"116,413","Net current assets 192,042 116,413",£000,2015.0
+11,"881,636",868273,Total assets less current liabilities,"805,504","Total assets less current liabilities 881,636 805,504",£000,2015.0
+12,"77,646",868273,Provisions for liabilities,"80,829","Provisions for liabilities 19 77,646 80,829",£000,2015.0
+13,"709,700",868273,Retirement benefit obligations,"877,000","Retirement benefit obligations 20 709,700 877,000",£000,2015.0
+14,"2,026,874",868273,Total liabilities,"2,286,334","Total liabilities 2,026,874 2,286,334",£000,2015.0
+15,"94,290",868273,Net assets/(liabilities),"(152,325)","Net assets/(liabilities) 94,290 (152,325)",£000,2015.0
+0,2015,868273,Note,2014,Note 2015 2014,£000,2015.0
+1,"481,938",868273,Called up share capital,"481,938","Called up share capital 22 481,938 481,938",£000,2015.0
+2,"92,906",868273,Share premium account,"92,906","Share premium account 92,906 92,906",£000,2015.0
+3,"440,000",868273,Other reserves,"440,000","Other reserves 440,000 440,000",£000,2015.0
+4,"4,435",868273,Cash flow hedge reserve,"2,527","Cash flow hedge reserve 4,435 2,527",£000,2015.0
+5,"(808,100)",868273,Pension reserve,"(974,400)","Pension reserve 20 (808,100) (974,400)",£000,2015.0
+6,"(116,889)",868273,Retained earnings,"(195,296)","Retained earnings (116,889) (195,296)",£000,2015.0
+7,"94,290",868273,Total equity,"(152,325)","Total equity 94,290 (152,325)",£000,2015.0
+0,"4,470,000",1983517,Goodwill oe,"270,000","Goodwill oe 4,470,000 270,000",£,2017.0
+1,"758,410",1983517,Tangible assets,"649,811","Tangible assets 758,410 649,811",£,2017.0
+2,"38,614,590",1983517,Stocks,"37,094,713","Stocks 11 38,614,590 37,094,713",£,2017.0
+3,"6,635,985",1983517,Debtors,"3,153,175","Debtors 12 6,635,985 3,153,175",£,2017.0
+4,"3,863,767",1983517,Cash at bank and in hand,"5,517,998","Cash at bank and in hand 3,863,767 5,517,998",£,2017.0
+5,"(38,409,179)",1983517,Creditors: amounts falling due within one year,"(37,117,733)","one year (38,409,179) (37,117,733)",£,2017.0
+6,"10,705,163",1983517,Net current assets,"8,648,153","Net current assets 10,705,163 8,648,153",£,2017.0
+7,"15,933,573",1983517,Total assets less current liabilities,"9,567,964","Total assets less current liabilities 15,933,573 9,567,964",£,2017.0
+8,100,1983517,Called up share capital,100,Called up share capital 15 100 100,£,2017.0
+9,"15,933,473",1983517,Profit and loss reserves,"9,567,864","Profit and loss reserves 15,933,473 9,567,864",£,2017.0
+10,"15,933,573",1983517,Total equity,"9,567,964","Total equity 15,933,573 9,567,964",£,2017.0
+0,2015,2765595,-,2014,- 2015 2014,£,2015.0
+1,"3,140,969",2765595,Tangible assets,"3,390,981","Tangible assets 11 3,140,969 3,390,981",£,2015.0
+2,3,2765595,Other financial assets,3,Other financial assets 14 3 3,£,2015.0
+3,"122,521",2765595,Stocks,"140,437","Stocks 12 122,521 140,437",£,2015.0
+4,"6,969,339",2765595,Debtors,"6,234,798","Debtors 13 6,969,339 6,234,798",£,2015.0
+5,"2,867,842",2765595,Cash at bank and in hand,"1,780,202","Cash at bank and in hand 2,867,842 1,780,202",£,2015.0
+6,"(4,553,005)",2765595,Creditors: Amounts falling due within one year,"(4,493,566)","Creditors: Amounts falling due within one year 16 (4,553,005) (4,493,566)",£,2015.0
+7,"5,406,697",2765595,Net current assets,"3,661,871","Net current assets 5,406,697 3,661,871",£,2015.0
+8,"(1,431,675)",2765595,Creditors: Amounts falling due after more than one year,"(1,447,175)","Creditors: Amounts falling due after more than one year 16 (1,431,675) (1,447,175)",£,2015.0
+9,270,2765595,Provisions for liabilities,"(9,933)","Provisions for liabilities 270 (9,933)",£,2015.0
+10,"7,115,724",2765595,Net assets,"5,595,747","Net assets 7,115,724 5,595,747",£,2015.0
+11,"1,111",2765595,Called up share capital,"1,111","Called up share capital 18 1,111 1,111",£,2015.0
+12,"7,113,613",2765595,Retained earnings .,"5,593,636","Retained earnings . 7,113,613 5,593,636",£,2015.0
+13,"7,115,724",2765595,Total equity,"5,595,747","Total equity 7,115,724 5,595,747",£,2015.0
+0,"39,323,082",02959325,Tangible fixed assets,"45,030,069","Tangible fixed assets 10 39,323,082 45,030,069",£,2016.0
+1,"465,415",02959325,Deferred tax asset,"1,345,485","Deferred tax asset 16 465,415 1,345,485",£,2016.0
+2,"1,736,915",02959325,Stocks,"1,585,099","Stocks 11 1,736,915 1,585,099",£,2016.0
+3,"78,926,622",02959325,- Amounts falling due within one year,"34,374,351","- Amounts falling due within one year 12 78,926,622 34,374,351",£,2016.0
+4,"710,168",02959325,- Amounts falling due after one year,"1,531,507","- Amounts falling due after one year 13 710,168 1,531,507",£,2016.0
+5,"12,911,423",02959325,Cash at bank and in hand,"73,603,577","Cash at bank and in hand 12,911,423 73,603,577",£,2016.0
+6,"42,135,735",02959325,NET CURRENT ASSETS,"28,402,236","NET CURRENT ASSETS 42,135,735 28,402,236",£,2016.0
+7,"81,458,817",02959325,LIABILITIES,"73,432,305","LIABILITIES 81,458,817 73,432,305",£,2016.0
+8,"(15,260,017)",02959325,Accruals and deferred income,"(15,726,656)","Accruals and deferred income 15 (15,260,017) (15,726,656)",£,2016.0
+9,"66,198,800",02959325,NET ASSETS,"57,705,649","NET ASSETS 66,198,800 57,705,649",£,2016.0
+10,"316,985",02959325,Equity share capital,"316,985","Equity share capital 17 316,985 316,985",£,2016.0
+11,"330,789,024",02959325,Share premium,"330,789,024","Share premium 18 330,789,024 330,789,024",£,2016.0
+12,"(264,907,209)",02959325,Retained deficit,"(273,400,360)","Retained deficit 19 (264,907,209) (273,400,360)",£,2016.0
+13,"66,198,800",02959325,SHAREHOLDER'S FUNDS,"57,705,649","SHAREHOLDER'S FUNDS 66,198,800 57,705,649",£,2016.0
+0,186,00542515,Intangible assets,171,Intangible assets 10 186 171,$,2015.0
+1,945,00542515,Tangible assets,"1,023","Tangible assets 11 945 1,023",$,2015.0
+2,"1,537",00542515,Stocks,"1,660","Stocks 13 1,537 1,660",$,2015.0
+3,"69,300",00542515,"within one year 14 23,241 40.819 after one yeai","71,643","after one yeai 14 69,300 71,643",$,2015.0
+4,430,00542515,Derivatives and other financeal instruments due within one year,591,within one year 19 430 591,$,2015.0
+5,950,00542515,within one year 19 430 591 after one year,"1,129","after one year 19 950 1,129",$,2015.0
+6,"(77,824)",00542515,Creditois: amounts falling due within one year,"(84,459)","Creditois: amounts falling due within one year (77,824) (84,459)",$,2015.0
+7,(982),00542515,Derivatives and other financial instruments due within one,(721),Derivatives and other financial instruments due within one (982) (721),$,2015.0
+8,"38,570",00542515,Net cutent assets,"56,607","Net cutent assets 38,570 56,607",$,2015.0
+9,112,00542515,"TOTAL ASSETS LESS CURRENT LIABILITIES ,",448,"TOTAL ASSETS LESS CURRENT LIABILITIES 115,995 112 448",$,2015.0
+10,"(64,926)",00542515,Creditors: amounts falling due after more than one year,"(64,202)","Creditors: amounts falling due after more than one year 15 (64,926) (64,202)",$,2015.0
+11,"(2,428)",00542515,Derivatives and other financial instruments due after one,"(1,521)","Derivatives and other financial instruments due after one (2,428) (1,521)",$,2015.0
+12,(64),00542515,Other provisions,(100),Other provisions 21 (64) (100),$,2015.0
+13,(16),00542515,Foreign currency translation reserve,(11),Foreign currency translation reserve (16) (11),$,2015.0
+0,"8,199,740",01539777,Tangible assets,"7,640,998","Tangible assets 10 8,199,740 7,640,998",£,2016.0
+1,"34,876",01539777,Investments,"34,876","Investments 11 34,876 34,876",£,2016.0
+2,12,01539777,Debtors: amounts falling due after more than one year,"44,250","than one year 12 44,250",£,2016.0
+3,"1,673,094",01539777,Debtors: amounts falling due within one year,"1,707,636","year 12 1,673,094 1,707,636",£,2016.0
+4,"5,790,826",01539777,Cash at bank and in hand,"4,295,555","Cash at bank and in hand 5,790,826 4,295,555",£,2016.0
+5,"(5,227,962)",01539777,‘Creditors: amounts falling due within one year,"(4,600,527)","year 13 (5,227,962) (4,600,527)",£,2016.0
+6,"2,280,208",01539777,Net current assets,"1,402,664","Net current assets 2,280,208 1,402,664",£,2016.0
+7,"10,514,824",01539777,Total assets less current liabilities,"9,078,538","Total assets less current liabilities 10,514,824 9,078,538",£,2016.0
+8,"(1,219,421)",01539777,Creditors: amounts falling due after more than one year,"(1,044,579)","than one year 14 (1,219,421) (1,044,579)",£,2016.0
+9,"9,295,403",01539777,Net assets,"8,033,959","Net assets 9,295,403 8,033,959",£,2016.0
+10,"1,000",01539777,Called up share capital,"1,000","Called up share capital 17 1,000 1,000",£,2016.0
+11,"9,294,403",01539777,Profit and loss account,"8,032,959","Profit and loss account 9,294,403 8,032,959",£,2016.0
+0,"2,585",02714555,Tangible assets,"2,634","Tangible assets 2,585 2,634",£7000,2015.0
+1,26,02714555,Investments,26,Investments 26 26,£7000,2015.0
+2,"123,627",02714555,Debtors,"117,632","Debtors 123,627 117,632",£7000,2015.0
+3,"1,591",02714555,Cash at bank and in hand,738,"Cash at bank and in hand 1,591 738",£7000,2015.0
+4,"(74,122)",02714555,CREDITORS: amounts falling due within one year,"(74,062)","within one year (74,122) (74,062)",£7000,2015.0
+5,"51,096",02714555,NET CURRENT ASSETS,"44,308","NET CURRENT ASSETS 51,096 44,308",£7000,2015.0
+6,"53,707",02714555,LIABILITIES,"47,205","LIABILITIES 53,707 47,205",£7000,2015.0
+7,(161),02714555,CREDITORS: amounts falling due greater than one year,(260),CREDITORS: amounts falling due greater than one year (161) (260),£7000,2015.0
+8,"53,546",02714555,NET ASSETS,"46,945","NET ASSETS 53,546 46,945",£7000,2015.0
+9,"1,501",02714555,Profit and loss account,"46,945","Profit and loss account 1,501 46,945",£7000,2015.0
+10,17,02714555,Capital contribution reserve,"52,045","Capital contribution reserve 17 52,045",£7000,2015.0
+11,"53,546",02714555,SHAREHOLDER’S FUNDS,"46,945","SHAREHOLDER’S FUNDS 53,546 46,945",£7000,2015.0
+0,108,04802747,"Debtors ,",108,"Debtors , 5 108 108",£,2016.0
+1,100,04802747,Called up share capital,100,Called up share capital 6 100 100,£,2016.0
+2,8,04802747,Profit and loss account,8,Profit and loss account 8 8,£,2016.0
+0,"358,613",02266230,Tangible assets,"35,963","Tangible assets 10 358,613 35,963",£,2015.0
+1,"657,735",02266230,Stocks,"404,931","Stocks 11 657,735 404,931",£,2015.0
+2,"19,626,898",02266230,Debtors,"36,195,849","Debtors 12 19,626,898 36,195,849",£,2015.0
+3,953,02266230,Cash at bank and in hand,"4,003","Cash at bank and in hand 953 4,003",£,2015.0
+4,"(18,180,602)",02266230,CREDITORS: amounts falling due within one year,"(33,569,518)","one year 13 (18,180,602) (33,569,518)",£,2015.0
+5,"2,104,984",02266230,NET CURRENT ASSETS,"3,035,265","NET CURRENT ASSETS 2,104,984 3,035,265",£,2015.0
+6,"2,463,597",02266230,TOTAL ASSETS LESS CURRENT LIABILITIES,"3,071,228","TOTAL ASSETS LESS CURRENT LIABILITIES 2,463,597 3,071,228",£,2015.0
+7,"(452,315)",02266230,Other provisions,"(428,128)","Other provisions 15 (452,315) (428,128)",£,2015.0
+8,"2,009,849",02266230,NET ASSETS,"2,643,100","NET ASSETS 2,009,849 2,643,100",£,2015.0
+9,"10,000",02266230,Called up share capital,"10,000","Called up share capital 19 10,000 10,000",£,2015.0
+10,50,02266230,Capital redemption reserve,50,Capital redemption reserve 20 50 50,£,2015.0
+11,"1,999,799",02266230,Profit and loss account,"2,633,050","Profit and loss account 20 1,999,799 2,633,050",£,2015.0
+12,"2,009,849",02266230,SHAREHOLDERS’ FUNDS,"2,643,100","SHAREHOLDERS’ FUNDS 21 2,009,849 2,643,100",£,2015.0
+0,"20,425",00983951,Intangible assets,"23,268","Intangible assets 20,425 23,268",£000,2016.0
+1,"11,457",00983951,Tangible assets,"11,156","Tangible assets 11,457 11,156",£000,2016.0
+2,"4,755",00983951,Deferred tax asset,"4,581","Deferred tax asset 4,755 4,581",£000,2016.0
+3,"4,677",00983951,Stocks,"4,843","Stocks 16 4,677 4,843",£000,2016.0
+4,"49,750",00983951,Debtors,"54,297","Debtors 17 49,750 54,297",£000,2016.0
+5,"2,559",00983951,Cash at bank and in hand,492,"Cash at bank and in hand 2,559 492",£000,2016.0
+6,"(76,850)",00983951,Creditors: Amounts falling due within one year,"(54,753)","Creditors: Amounts falling due within one year (76,850) (54,753)",£000,2016.0
+7,"(19,864)",00983951,Net current assets/(liabilities),"4,879","Net current assets/(liabilities) (19,864) 4,879",£000,2016.0
+8,"16,784",00983951,Total assets less current liabilities,"43,884","Total assets less current liabilities 16,784 43,884",£000,2016.0
+9,20,00983951,Creditors: Amounts falling due after more than one year,"(29,019)","Creditors: Amounts falling due after more than one year 20 (29,019)",£000,2016.0
+10,(719),00983951,Provision for liabilities,"(1,770)","Provision for liabilities 19 (719) (1,770)",£000,2016.0
+11,"(9,301)",00983951,Pension asset/(liability),152,"Pension asset/(liability) (9,301) 152",£000,2016.0
+12,"6,764",00983951,Net assets,"13,217","Net assets 6,764 13,217",£000,2016.0
+13,137,00983951,Called up share capital,137,Called up share capital 22 137 137,£000,2016.0
+14,164,00983951,Capital reserve,164,Capital reserve 164 164,£000,2016.0
+15,"6,463",00983951,Profit and loss account,"12,916","Profit and loss account 6,463 12,916",£000,2016.0
+16,"6,764",00983951,Shareholders’ funds,"13,217","Shareholders’ funds 6,764 13,217",£000,2016.0
+0,"23,727",01002610,Intangible assets,"11,126","Intangible assets 16 23,727 11,126",£000,2015.0
+1,"110,728",01002610,‘Tangible assets,"113,432","‘Tangible assets 15 110,728 113,432",£000,2015.0
+2,"45,738",01002610,"‘Tangible assets 15 110,728 113,432 investments","45,738","investments 17 45,738 45,738",£000,2015.0
+3,"11,162",01002610,Stocks,"11,147","Stocks 18 11,162 11,147",£000,2015.0
+4,"755,991",01002610,Debtors: amounts falling due within one year,"728,026","Debtors: amounts falling due within one year 19 755,991 728,026",£000,2015.0
+5,"24,826",01002610,Debtors: amounts falling due after more than one year,"23,169","Debtors: amounts falling due after more than one year 19 24,826 23,169",£000,2015.0
+6,"6,234",01002610,Cash,"6,057","Cash 20 6,234 6,057",£000,2015.0
+7,"(264,341)",01002610,Creditors: Amounts falling due within one year,"(239,542)","Creditors: Amounts falling due within one year 21 (264,341) (239,542)",£000,2015.0
+8,"714,065",01002610,Total assets less current liabilities,"699,153","Total assets less current liabilities 714,065 699,153",£000,2015.0
+9,"(4,082)",01002610,Creditors: Amounts falling due after more than one year,"(10,025)","Creditors: Amounts falling due after more than one year (4,082) (10,025)",£000,2015.0
+10,"(37,610)",01002610,Provisions for liabilities,"(38,341)","Provisions for liabilities 23 (37,610) (38,341)",£000,2015.0
+11,"672,373",01002610,Net assets,"650,787","Net assets 672,373 650,787",£000,2015.0
+12,"35,377",01002610,Called up share capital,"35,377","Called up share capital 24 35,377 35,377",£000,2015.0
+13,"493,237",01002610,Share premium account,"493,237","Share premium account 493,237 493,237",£000,2015.0
+14,"(3,885)",01002610,Other reserves,"6,353","Other reserves (3,885) 6,353",£000,2015.0
+15,"147,644",01002610,Profit and loss account,"115,820","Profit and loss account 147,644 115,820",£000,2015.0
+16,"672,373",01002610,Shareholders’ funds,"650,787","Shareholders’ funds 672,373 650,787",£000,2015.0
+0,"74,924",02245999,Tangible assets,"63,907","Tangible assets 9 74,924 63,907",£7000,2016.0
+1,"20,463",02245999,Stocks,"19,562","Stocks 10 20,463 19,562",£7000,2016.0
+2,"18,972",02245999,Debtors .,"17,147","Debtors . 11 18,972 17,147",£7000,2016.0
+3,"28,748",02245999,Cash at bank and in hand a,"22,033","Cash at bank and in hand a 28,748 22,033",£7000,2016.0
+4,"(54,874)",02245999,"Creditors: amounts, falling due within one year","(44,924)","Creditors: amounts, falling due within one year 12 (54,874) (44,924)",£7000,2016.0
+5,"13,309",02245999,Net current assets,"13,818","Net current assets 13,309 13,818",£7000,2016.0
+6,"88,233",02245999,Total assets less current liabilities,"77,725","Total assets less current liabilities 88,233 77,725",£7000,2016.0
+7,"88,233",02245999,Net assets,"77,697","Net assets 88,233 77,697",£7000,2016.0
+8,"76,000",02245999,Called up share capital,"76,000","Called up share capital 15 76,000 76,000",£7000,2016.0
+9,"12,233",02245999,Profit and loss account,"1,697","Profit and loss account 12,233 1,697",£7000,2016.0
+10,"88,233",02245999,Shareholders’ funds,"77,697","Shareholders’ funds 88,233 77,697",£7000,2016.0
+0,2015,00553535,Note  .,2015,Note 2016 . 2016 2015 2015,£m,2016.0
+1,43,00553535,Tangible assets il,28,Tangible assets il 43 28,£m,2016.0
+2,8,00553535,Investments,8,Investments 12 8 8,£m,2016.0
+3,39,00553535,Stocks,26,Stocks 13 39 26,£m,2016.0
+4,85,00553535,Debtors: amounts falling due within one year,64,Debtors: amounts falling due within one year 14 85 64,£m,2016.0
+5,46,00553535,Cash at bank and in hand,32,Cash at bank and in hand 46 32,£m,2016.0
+6,(79),00553535,Creditors: amounts falling due within one year,(68),Creditors: amounts falling due within one year 15 (79) (68),£m,2016.0
+7,91,00553535,Net current assets,54,Net current assets 91 54,£m,2016.0
+8,142,00553535,Total assets less current liabilities,90,Total assets less current liabilities 142 90,£m,2016.0
+9,120,00553535,Net assets excluding pension liabilities ‘,79,Net assets excluding pension liabilities ‘ 120 79,£m,2016.0
+10,(110),00553535,.  ~,(67),. 7 ~ (110) (67),£m,2016.0
+11,10,00553535,"Net assets including pension liabilities : ,",12,"Net assets including pension liabilities : , 10 12",£m,2016.0
+12,43,00553535,Called up share capital,43,Called up share capital 17 43 43,£m,2016.0
+13,(33),00553535,Profit and loss account —,(1),Profit and loss account — 18 (33) (1),£m,2016.0
+14,10,00553535,_Equity shareholders’ funds / (deficit) .,12,_Equity shareholders’ funds / (deficit) . 19 10 12,£m,2016.0
+0,2016,01337451,Notes,2015,Notes 2016 2015,£'000,2016.0
+1,27,01337451,"Intangible assets  ,",637,"Intangible assets 9 21,196 27 637",£'000,2016.0
+2,"37,548",01337451,"Property, plant and equipment","42,617","Property, plant and equipment 10 37,548 42,617",£'000,2016.0
+3,180,01337451,Investments,180,Investments 11 180 180,£'000,2016.0
+4,"7,532",01337451,Deferred tax assets,"5,439","Deferred tax assets 13 7,532 5,439",£'000,2016.0
+5,"10,447",01337451,Inventories,"16,615","Inventories 14 10,447 16,615",£'000,2016.0
+6,"153,825",01337451,Trade and other receivables,"164,571","Trade and other receivables 15 153,825 164,571",£'000,2016.0
+7,282,01337451,Cash and cash equivalents,283,Cash and cash equivalents 282 283,£'000,2016.0
+8,"235,099",01337451,Total assets,"257,342","Total assets 235,099 257,342",£'000,2016.0
+9,"(1,602)",01337451,Trade and other payables,"(8,080)","Trade and other payables 16 (1,602) (8,080)",£'000,2016.0
+10,"(22,700)",01337451,Retirement benefit obligations,"(14,000)","Retirement benefit obligations 17 (22,700) (14,000)",£'000,2016.0
+11,"(251,384)",01337451,Trade and other payables,"(221,893)","Trade and other payables 16 (251,384) (221,893)",£'000,2016.0
+12,(348),01337451,Provisions,(611),Provisions 18 (348) (611),£'000,2016.0
+13,"(276,040)",01337451,Total liabilities,"(244,647)","Total liabilities (276,040) (244,647)",£'000,2016.0
+14,"(40,941)",01337451,Net (liabilities)/assets,"12,695","Net (liabilities)/assets (40,941) 12,695",£'000,2016.0
+15,125,01337451,Issued share capital,125,Issued share capital 19 125 125,£'000,2016.0
+16,587,01337451,Share premium,587,Share premium 587 587,£'000,2016.0
+17,"16,801",01337451,Other reserves,"11,056","Other reserves 19 16,801 11,056",£'000,2016.0
+18,"(58,454)",01337451,Retained (deficit) / earnings,927,"Retained (deficit) / earnings (58,454) 927",£'000,2016.0
+19,"(40,941)",01337451,Total (deficit) / equity,"12,695","Total (deficit) / equity (40,941) 12,695",£'000,2016.0
+0,2016,00178090,Note,2015,Note 2016 2015,£°000,2016.0
+1,"43,522",00178090,Inventories,"40,029","Inventories 14 43,522 40,029",£°000,2016.0
+2,"335,433",00178090,Debtors: amounts falling due within one year,"335,729","Debtors: amounts falling due within one year 15 335,433 335,729",£°000,2016.0
+3,13,00178090,Cash at bank and in hand,333,Cash at bank and in hand 13 333,£°000,2016.0
+4,"(155,986)",00178090,Creditors: amounts falling due within one year,"(189,912)","Creditors: amounts falling due within one year 17 (155,986) (189,912)",£°000,2016.0
+5,"330,804",00178090,Net current assets,"219,648","Net current assets 330,804 219,648",£°000,2016.0
+6,"330,804",00178090,Total assets less current liabilities,"345,751","Total assets less current liabilities 330,804 345,751",£°000,2016.0
+7,"(148,500)",00178090,Pensions and similar obligations,"(127,200)","Pensions and similar obligations 20 (148,500) (127,200)",£°000,2016.0
+8,"(8,847)",00178090,Other provisions,"(3,972)","Other provisions 19 (8,847) (3,972)",£°000,2016.0
+9,"173,457",00178090,Net assets,"212,485","Net assets 173,457 212,485",£°000,2016.0
+10,"165,000",00178090,Called up share capital,"165,000","Called up share capital 21 165,000 165,000",£°000,2016.0
+11,"60,454",00178090,Share premium account,"60,454","Share premium account 60,454 60,454",£°000,2016.0
+12,"75,500",00178090,Capital redemption reserve,"75,500","Capital redemption reserve 75,500 75,500",£°000,2016.0
+13,"(127,497)",00178090,Profit and loss account,"(88,469)","Profit and loss account (127,497) (88,469)",£°000,2016.0
+0,2016,00468115,Note,2015,Note 2016 2015,£,2016.0
+1,"6,486,572",00468115,Taupible assets,"6,410,368","Taupible assets 9 6,486,572 6,410,368",£,2016.0
+2,"97,500",00468115,Investments,"97,500","Investments 10 97,500 97,500",£,2016.0
+3,"13,985,078",00468115,Stocks il,"14,715,233","Stocks il 13,985,078 14,715,233",£,2016.0
+4,"14,665,424",00468115,Debtors,"15,436,662","Debtors 12 14,665,424 15,436,662",£,2016.0
+5,"879,419",00468115,Derivative financial assets,"695,056","Derivative financial assets 879,419 695,056",£,2016.0
+6,"(31,735,666)",00468115,Creditors: amounts falling due within one year,"(33,126,048)","Creditors: amounts falling due within one year 13 (31,735,666) (33,126,048)",£,2016.0
+7,"(51,252)",00468115,Derivative financial liabilities,"(624,708)","Derivative financial liabilities (51,252) (624,708)",£,2016.0
+8,"(2,254,534)",00468115,Net current (liabilities) / assets,"(2,903,805)","Net current (liabilities) / assets (2,254,534) (2,903,805)",£,2016.0
+9,"4,923,411",00468115,Tota] assets less current liabilities,"3,604,063","Tota] assets less current liabilities 4,923,411 3,604,063",£,2016.0
+10,"(182,410)",00468115,Creditors: amounts falling due after more than one year,"(251,342)","one year 14 (182,410) (251,342)",£,2016.0
+11,"(561,611)",00468115,"Provisions for liabilities and deferred tax liabilities  ,","(372,464)","liabilities 16 , (561,611) (372,464)",£,2016.0
+12,"4,179,390",00468115,Net assets,"2,980,257","Net assets 4,179,390 2,980,257",£,2016.0
+13,"1,220,000",00468115,Called up share capital  .,"1,220,000","Called up share capital 17 . 1,220,000 1,220,000",£,2016.0
+14,"652,458",00468115,Cash flow hedge :,"78,770","Cash flow hedge : 652,458 78,770",£,2016.0
+15,"2,306,932",00468115,Profit and loss account,"1,681,487","Profit and loss account 2,306,932 1,681,487",£,2016.0
+16,"4,179,390",00468115,Shareholder's funds,"2,980,257","Shareholder's funds 4,179,390 2,980,257",£,2016.0
+0,12,09457025,Intangible assets,134,Intangible assets 12 134,£’000,2016.0
+1,171,09457025,Tangible assets,419,Tangible assets 13 171 419,£’000,2016.0
+2,"9,995",09457025,Debtors .,"6,000","Debtors . 14 9,995 6,000",£’000,2016.0
+3,"5,554",09457025,Cash at bank and in hand,"11,963","Cash at bank and in hand 5,554 11,963",£’000,2016.0
+4,"(10,208)",09457025,Creditors: Amounts falling due within  year,"(13,700)","Creditors: Amounts falling due within 1 year 15 (10,208) (13,700)",£’000,2016.0
+5,"5,341",09457025,Net current assets,"4,263","Net current assets 5,341 4,263",£’000,2016.0
+6,"5,646",09457025,Total assets less current liabilities,"4,682","Total assets less current liabilities 5,646 4,682",£’000,2016.0
+7,"(3,735)",09457025,Provisions for liabilities,"(1,868)","Provisions for liabilities 16 (3,735) (1,868)",£’000,2016.0
+8,"1,911",09457025,Net Assets,"2,814","Net Assets 1,911 2,814",£’000,2016.0
+0,"20,425",983951,Intangible assets,"23,268","Intangible assets 20,425 23,268",£000,2016.0
+1,"11,457",983951,Tangible assets,"11,156","Tangible assets 11,457 11,156",£000,2016.0
+2,"4,755",983951,Deferred tax asset,"4,581","Deferred tax asset 4,755 4,581",£000,2016.0
+3,"4,677",983951,Stocks,"4,843","Stocks 16 4,677 4,843",£000,2016.0
+4,"49,750",983951,Debtors,"54,297","Debtors 17 49,750 54,297",£000,2016.0
+5,"2,559",983951,Cash at bank and in hand,492,"Cash at bank and in hand 2,559 492",£000,2016.0
+6,"(76,850)",983951,Creditors: Amounts falling due within one year,"(54,753)","Creditors: Amounts falling due within one year (76,850) (54,753)",£000,2016.0
+7,"(19,864)",983951,Net current assets/(liabilities),"4,879","Net current assets/(liabilities) (19,864) 4,879",£000,2016.0
+8,"16,784",983951,Total assets less current liabilities,"43,884","Total assets less current liabilities 16,784 43,884",£000,2016.0
+9,20,983951,Creditors: Amounts falling due after more than one year,"(29,019)","Creditors: Amounts falling due after more than one year 20 (29,019)",£000,2016.0
+10,(719),983951,Provision for liabilities,"(1,770)","Provision for liabilities 19 (719) (1,770)",£000,2016.0
+11,"(9,301)",983951,Pension asset/(liability),152,"Pension asset/(liability) (9,301) 152",£000,2016.0
+12,"6,764",983951,Net assets,"13,217","Net assets 6,764 13,217",£000,2016.0
+13,137,983951,Called up share capital,137,Called up share capital 22 137 137,£000,2016.0
+14,164,983951,Capital reserve,164,Capital reserve 164 164,£000,2016.0
+15,"6,463",983951,Profit and loss account,"12,916","Profit and loss account 6,463 12,916",£000,2016.0
+16,"6,764",983951,Shareholders’ funds,"13,217","Shareholders’ funds 6,764 13,217",£000,2016.0
+0,"20,425",983951,Intangible assets,"23,268","Intangible assets 20,425 23,268",£000,2016.0
+1,"11,457",983951,Tangible assets,"11,156","Tangible assets 11,457 11,156",£000,2016.0
+2,"4,755",983951,Deferred tax asset,"4,581","Deferred tax asset 4,755 4,581",£000,2016.0
+3,"4,677",983951,Stocks,"4,843","Stocks 16 4,677 4,843",£000,2016.0
+4,"49,750",983951,Debtors,"54,297","Debtors 17 49,750 54,297",£000,2016.0
+5,"2,559",983951,Cash at bank and in hand,492,"Cash at bank and in hand 2,559 492",£000,2016.0
+6,"(76,850)",983951,Creditors: Amounts falling due within one year,"(54,753)","Creditors: Amounts falling due within one year (76,850) (54,753)",£000,2016.0
+7,"(19,864)",983951,Net current assets/(liabilities),"4,879","Net current assets/(liabilities) (19,864) 4,879",£000,2016.0
+8,"16,784",983951,Total assets less current liabilities,"43,884","Total assets less current liabilities 16,784 43,884",£000,2016.0
+9,20,983951,Creditors: Amounts falling due after more than one year,"(29,019)","Creditors: Amounts falling due after more than one year 20 (29,019)",£000,2016.0
+10,(719),983951,Provision for liabilities,"(1,770)","Provision for liabilities 19 (719) (1,770)",£000,2016.0
+11,"(9,301)",983951,Pension asset/(liability),152,"Pension asset/(liability) (9,301) 152",£000,2016.0
+12,"6,764",983951,Net assets,"13,217","Net assets 6,764 13,217",£000,2016.0
+13,137,983951,Called up share capital,137,Called up share capital 22 137 137,£000,2016.0
+14,164,983951,Capital reserve,164,Capital reserve 164 164,£000,2016.0
+15,"6,463",983951,Profit and loss account,"12,916","Profit and loss account 6,463 12,916",£000,2016.0
+16,"6,764",983951,Shareholders’ funds,"13,217","Shareholders’ funds 6,764 13,217",£000,2016.0
+0,"2,373",01370175,Tangible assets,"2,240","Tangible assets 14 2,373 2,240",£000,2016.0
+1,"1,830",01370175,Stocks,"1,629","Stocks 15 1,830 1,629",£000,2016.0
+2,"5,900",01370175,Debtors,"5,273","Debtors 16 5,900 5,273",£000,2016.0
+3,"(7,670)",01370175,Creditors: amounts falling due within one year,"(7,378)","year 18 (7,670) (7,378)",£000,2016.0
+4,63,01370175,Net current assets/(liabilities),(473),Net current assets/(liabilities) 63 (473),£000,2016.0
+5,"2,436",01370175,Total assets less current liabilities,"1,767","Total assets less current liabilities 2,436 1,767",£000,2016.0
+6,(374),01370175,Creditors: amounts falling due after more than one year,(294),than one year 19 (374) (294),£000,2016.0
+7,(89),01370175,Deferred tax,(240),Deferred tax 22 (89) (240),£000,2016.0
+8,"1,973",01370175,Net assets,"1,233","Net assets 1,973 1,233",£000,2016.0
+9,10,01370175,Called up share capital,10,Called up share capital 23 10 10,£000,2016.0
+10,"1,963",01370175,Profit and loss account,"1,223","Profit and loss account 1,963 1,223",£000,2016.0
+11,"1,973",01370175,Total shareholders’ funds,"1,233","Total shareholders’ funds 1,973 1,233",£000,2016.0
+0,2016,04860660,Notes,2015,Notes 2016 2015,£000,2016.0
+1,592,04860660,Intangible assets dl,4,Intangible assets dl 592 4,£000,2016.0
+2,"7,618",04860660,Tangible assets,"4,345","Tangible assets 12 7,618 4,345",£000,2016.0
+3,"3,490",04860660,Stocks,"3,169","Stocks 3,490 3,169",£000,2016.0
+4,"73,007",04860660,Debtors,"68,790","Debtors 13 73,007 68,790",£000,2016.0
+5,"242,794",04860660,Cash at bank,"191,883","Cash at bank 242,794 191,883",£000,2016.0
+6,"(258,752)",04860660,Creditors: amounts falling due within one year,"(201,745)","Creditors: amounts falling due within one year 14 (258,752) (201,745)",£000,2016.0
+7,"60,539",04860660,Net current assets,"62,097","Net current assets 60,539 62,097",£000,2016.0
+8,"68,749",04860660,Total assets less current liabilities,"66,446","Total assets less current liabilities 68,749 66,446",£000,2016.0
+9,"(1,760)",04860660,Creditors: amounts falling due after more than one year I,(76),"Creditors: amounts falling due after more than one year I5 (1,760) (76)",£000,2016.0
+10,"(16,064)",04860660,Provisions for liabilities,"(20,299)","Provisions for liabilities 16 (16,064) (20,299)",£000,2016.0
+11,"50,925",04860660,Net assets,"46,071","Net assets 50,925 46,071",£000,2016.0
+12,"20,000",04860660,Share capital,"20,000","Share capital 18 20,000 20,000",£000,2016.0
+13,"30,925",04860660,Retained earnings,"26,071","Retained earnings 30,925 26,071",£000,2016.0
+14,"50,925",04860660,Total equity,"46,071","Total equity 50,925 46,071",£000,2016.0
+0,"12,270",2303730,Tangible assets,"12,778","Tangible assets 9 12,270 12,778",£'000,2015.0
+1,"16,625",2303730,Stocks,"15,775","Stocks 10 16,625 15,775",£'000,2015.0
+2,"50,737",2303730,Debtors,"43,220","Debtors 11 50,737 43,220",£'000,2015.0
+3,"5,960",2303730,Cash at bank and in hand,"3,974","Cash at bank and in hand 5,960 3,974",£'000,2015.0
+4,"(19,004)",2303730,Creditors: amounts falling due within one,"(17,584)","Creditors: amounts falling due within one 12 (19,004) (17,584)",£'000,2015.0
+5,"53,318",2303730,Net current assets,"45,385","Net current assets 53,318 45,385",£'000,2015.0
+6,"65,588",2303730,Total assets less current liabilities,"58,163","Total assets less current liabilities 65,588 58,163",£'000,2015.0
+7,"(1,580)",2303730,Provisions for liabilities,"(1,702)","Provisions for liabilities 13 (1,580) (1,702)",£'000,2015.0
+8,"64,008",2303730,Net assets excluding pension liabilities,"56,461","Net assets excluding pension liabilities 64,008 56,461",£'000,2015.0
+9,"(6,865)",2303730,Pension scheme liabilities,"(8,333)","Pension scheme liabilities 15 (6,865) (8,333)",£'000,2015.0
+10,"57,143",2303730,Net assets including pension liabilities,"48,128","Net assets including pension liabilities 57,143 48,128",£'000,2015.0
+11,"2,500",2303730,Called up share capital,"2,500","Called up share capital 16 2,500 2,500",£'000,2015.0
+12,"54,643",2303730,Profit and loss account,"45,628","Profit and loss account 17 54,643 45,628",£'000,2015.0
+13,"57,143",2303730,Total shareholders’ funds,"48,128","Total shareholders’ funds 17 57,143 48,128",£'000,2015.0
+0,"1,417",02582534,Goodwill,"1,417","Goodwill 13 1,417 1,417",£000,2016.0
+1,"3,944",02582534,Tangible assets,898,"Tangible assets 14 3,944 898",£000,2016.0
+2,"44,099",02582534,Debtors : amounts falling due within one year,"31,949","Debtors : amounts falling due within one year 44,099 31,949",£000,2016.0
+3,"73,151",02582534,Cash at bank,"46,581","Cash at bank 73,151 46,581",£000,2016.0
+4,"46,022",02582534,Trade and other payables,"21,194","Trade and other payables 16 46,022 21,194",£000,2016.0
+5,"19,595",02582534,Loans and borrowings,"9,438","Loans and borrowings 16 19,595 9,438",£000,2016.0
+6,"51,633",02582534,Net current assets,"47,898","Net current assets 51,633 47,898",£000,2016.0
+7,"56,994",02582534,Total assets less current liabilities,"50,213","Total assets less current liabilities 56,994 50,213",£000,2016.0
+8,"5,500",02582534,Called up share capital,"5,500","Called up share capital 21 5,500 5,500",£000,2016.0
+9,"16,500",02582534,Share premium account,"16,500","Share premium account 22 16,500 16,500",£000,2016.0
+10,"31,228",02582534,Profit and loss account,"24,394","Profit and loss account 22 31,228 24,394",£000,2016.0
+11,"3,738",02582534,Equity reserve,"3,638","Equity reserve 22 3,738 3,638",£000,2016.0
+0,"4,210,079",00477955,Tangible assets,"4,338,048","Tangible assets 9 4,210,079 4,338,048",£,2015.0
+1,2,00477955,Investments,2,Investments 10 2 2,£,2015.0
+2,"4,437,178",00477955,Stocks ],"4,456,993","Stocks 1] 4,437,178 4,456,993",£,2015.0
+3,"4,269,622",00477955,Debtors,"4,252,633","Debtors 12 4,269,622 4,252,633",£,2015.0
+4,250,00477955,Cash at bank and in hand,"108,541","Cash at bank and in hand 250 108,541",£,2015.0
+5,"4,509,847",00477955,Amounts falling due within one year,"4,724,476","Amounts falling due within one year 13 4,509,847 4,724,476",£,2015.0
+6,"4,197,203",00477955,NET CURRENT ASSETS,"4,093,691","NET CURRENT ASSETS 4,197,203 4,093,691",£,2015.0
+7,"8,407,284",00477955,LIABILITIES,"8,461,741","LIABILITIES 8,407,284 8,461,741",£,2015.0
+8,146),00477955,"Amounts falling due after more than one year  (,,","(1,806,810)","year 14 (1,629, 146) (1,806,810)",£,2015.0
+9,"(102,814)",00477955,PROVISIONS FOR LIABILITIES,"(133,265)","PROVISIONS FOR LIABILITIES 19 (102,814) (133,265)",£,2015.0
+10,"6,675,324",00477955,NET ASSETS,"6,521,666","NET ASSETS 6,675,324 6,521,666",£,2015.0
+11,"103,000",00477955,Called up share capital,"103,000","Called up share capital 20 103,000 103,000",£,2015.0
+12,"1,047,853",00477955,Revaluation reserve,"1,063,974","Revaluation reserve 21 1,047,853 1,063,974",£,2015.0
+13,2,00477955,Capital redemption reserve,2,Capital redemption reserve 21 2 2,£,2015.0
+14,"5,524,469",00477955,Retained earnings,"5,354,690","Retained earnings 21 5,524,469 5,354,690",£,2015.0
+15,"6,675,324",00477955,SHAREHOLDERS' FUNDS,"6,521,666","SHAREHOLDERS' FUNDS 6,675,324 6,521,666",£,2015.0
+0,"21,092",3824626,Tangible assets,"22,084","Tangible assets 21,092 22,084",£'000,2015.0
+1,"7,386",3824626,Stocks,"7,990","Stocks 7,386 7,990",£'000,2015.0
+2,"6,337",3824626,Debtors,"7,419","Debtors 6,337 7,419",£'000,2015.0
+3,681,3824626,Cash at bank and in hand,490,Cash at bank and in hand 681 490,£'000,2015.0
+4,"(13,604)",3824626,CREDITORS: amounts falling due within one year,"(13,993)","CREDITORS: amounts falling due within one year 20 (13,604) (13,993)",£'000,2015.0
+5,800,3824626,NET CURRENT ASSETS,"1,906","NET CURRENT ASSETS 800 1,906",£'000,2015.0
+6,"22,666",3824626,TOTAL ASSETS LESS CURRENT LIABILITIES,"24,627","TOTAL ASSETS LESS CURRENT LIABILITIES 22,666 24,627",£'000,2015.0
+7,"(4,323)",3824626,CREDITORS: Amounts falling due after more than one year,"(7,189)","CREDITORS: Amounts falling due after more than one year 21 (4,323) (7,189)",£'000,2015.0
+8,(40),3824626,PROVISIONS FOR LIABILITIES,(10),PROVISIONS FOR LIABILITIES 24 (40) (10),£'000,2015.0
+9,"18,303",3824626,NET ASSETS,"17,428","NET ASSETS 18,303 17,428",£'000,2015.0
+10,"15,000",3824626,Called up share capital,"15,000","Called up share capital 25 15,000 15,000",£'000,2015.0
+11,"3,303",3824626,Profit and loss account,"2,428","Profit and loss account 26 3,303 2,428",£'000,2015.0
+12,"18,303",3824626,TOTAL SHAREHOLDER’S FUNDS,"17,428","TOTAL SHAREHOLDER’S FUNDS 18,303 17,428",£'000,2015.0

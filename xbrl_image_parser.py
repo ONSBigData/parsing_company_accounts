@@ -75,8 +75,6 @@ def determine_units_count(subset):
 		  sort_values("count", ascending=False).\
 		  reset_index()
 	
-	print(units)
-	
 	# Return most common units
 	return( (units.loc[0, "text"], units.loc[0, "count"]) )
 
@@ -242,8 +240,8 @@ def extract_lines(page_df, lines):
                 label = re.sub("[0-9]", "", result.groups()[0]).strip()
             
             results = results.append({"label":label,
-                                      "CurrYr":result.groups()[1],
-                                      "LastYr":result.groups()[2],
+                                      "currYr":result.groups()[1],
+                                      "lastYr":result.groups()[2],
                                       "source":line_text},
                                      ignore_index=True)
     return(results)
@@ -274,6 +272,12 @@ def process_OCR_csv(data):
 		
 		# Get all detectable balance sheet stats
 		results = results.append(extract_lines(page_df, detected_lines))
+	
+	years = determine_years_count(data)
+	units = determine_units_count(data)
+	
+	results['year'] = years.max()
+	results['unit'] = units[0]
 	
 	return( results )
 	
