@@ -82,8 +82,7 @@ def determine_units_count(subset):
 def determine_years_count(subset, limits=[2000, 2050]):
 	"""
 	Simplistic method that finds the years for a document through
-	counting all year-format strings, finding the two most common and
-	seeing if the difference is only one as an arbitrary QA.
+	counting all year-format strings, finding the most common.
 	"""
 
 	# Search in the value range of interest
@@ -96,13 +95,9 @@ def determine_years_count(subset, limits=[2000, 2050]):
 						groupby("numerical").\
 						count().\
 						reset_index().\
-						sort_values("count", ascending=False)['numerical'][0:2].values
+						sort_values("count", ascending=False)['numerical'].values
 	
-	if (candidates[0] - candidates[1]) == 1:
-		return(candidates)
-	
-	else:
-		return(0)
+	return(np.array([candidates[0], candidates[0] - 1]))
 	
 
 def aggregate_sentences_over_lines(dat):
@@ -186,7 +181,7 @@ def find_balance_sheet_pages(data):
 	
 
 # Lifted this almost directly from David Kane's work
-def detect_lines(page_df, x_tolerance=0):
+def detect_lines(page_df, x_tolerance=0, height_tolerance=20.0):
 	"""
 	Detect lines in the csv of a page, returned by Tesseract
 	"""
@@ -197,12 +192,13 @@ def detect_lines(page_df, x_tolerance=0):
 	this_range = []
 	
 	# Clean up the words list, removing blank entries and null values that can arise
-	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip() != "")]
-	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip("|") != "")]
-	words_df = words_df[words_df['text'].isnull() ==False]
+	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip() != "")]                   # blank strings
+	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip("|") != "")]                # Vertical separators (arise when edges of bounded tables detected)
+	words_df = words_df[words_df['text'].isnull() ==False]                                        # Null values (I don't know how they can even exist!)
+	words_df = words_df[words_df['height'] < page_stats['height'] / height_tolerance]             # Any word with height greater than 1/20th fraction of page height
 	
 	# Iterate through every vertical pixel position, top (0) to bottom (height)
-	for i in range(page_stats['height']):
+	for i in range(page_stats['height']): 
 		result = (( words_df['bottom'] >= i ) & ( words_df['top'] <= i )).sum() > 0
 		
 		# Append vertical pixels aligned with words to this_range
@@ -214,7 +210,7 @@ def detect_lines(page_df, x_tolerance=0):
 			if this_range:
 				row_ranges.append(this_range)
 			this_range = []
-		
+			
 	# Create bounding boxes for convenience
 	return[{"left":0, "right":page_stats['width'], "top":min(r), "bottom":max(r)} for r in row_ranges]
 	
