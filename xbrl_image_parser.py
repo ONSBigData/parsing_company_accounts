@@ -292,12 +292,12 @@ def process_OCR_csv(data):
 		detected_lines = detect_lines(page_df)
 		
 		# Get all detectable balance sheet stats
-		results = results.append(extract_lines(page_df, detected_lines))
+		results = results.append( extract_lines(page_df, detected_lines) )
 	
 	years = determine_years_count(data)
 	units = determine_units_count(data)
 	
-	results['year'] = np.where(results['currYr']==True, years.max(), years.min())
+	results['year'] = np.where( results['currYr']==True, years.max(), years.min() )
 	results['unit'] = units[0]
 	
 	return( results )

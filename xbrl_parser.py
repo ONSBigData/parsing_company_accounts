@@ -123,14 +123,7 @@ def retrieve_unit(soup, each):
 		except:
 			return("NA")
 	
-	# see if there's a detectable currency in there
-	valid_currencies = ["USD",  "EUR", "GBP", "PURE"]
-	
-	for currency in valid_currencies:
-		if currency in unit_str.upper():
-			return(currency)
-	
-	return("other_"+unit_str)
+	return(unit_str.strip())
 
 
 def retrieve_date(soup, each):
@@ -224,7 +217,7 @@ def parse_element(soup, element):
 			element_dict['value'] = 0.0 - element_dict['value']
 	except:
 		pass
-				
+	
 	return(element_dict)
 
 
