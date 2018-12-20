@@ -138,15 +138,15 @@ def aggregate_sentences_over_lines(dat):
 	
 	# Iterate through and aggregate any lines that are continued
 	for index, row in line_text.iterrows():
-    
+	
 		if (row['continued_line']==True) & (index != 0) :
-        
+		
 			# If continued line, update values
 			row_of_interest['text'] = row_of_interest['text'] + " " + row['text']
 			row_of_interest['bottom'] = row['bottom']
 			row_of_interest['left'] = min([row_of_interest['left'], row['left']])
 			row_of_interest['right'] = max([row_of_interest['right'], row['right']])
-    
+	
 		else:
 			results = results.append(row_of_interest)
 			row_of_interest = row
@@ -173,89 +173,103 @@ def find_balance_sheet_pages(data):
 
 	# Get a list of pages likely to be balance sheets
 	BS_page_list = pd.unique(agg_text[agg_text['text'].apply(lambda x: np.where( re.search( "^[abbreviated]*balancesheet", x ), True, False))]['csv_num'])
-
+	
+	pos_page_list = pd.unique(agg_text[agg_text['text'].apply(lambda x: np.where( re.search( "^statementoffin", x ), True, False))]['csv_num'])
+	
 	# Filter out any page with the words "notes to the financial statements"
 	notes_page_list = pd.unique(agg_text[agg_text['text'].apply(lambda x: "notestothefinancialstatements" in x)]['csv_num'])
 	
 	# Filter out any page with the words "Statement of changes in equity"
 	statement_page_list = pd.unique(agg_text[agg_text['text'].apply(lambda x: "statementof" in x)]['csv_num'])
 	
-	return( [x for x in BS_page_list if x not in list(notes_page_list) + list(statement_page_list)] )
+	return( [x for x in BS_page_list if x not in list(notes_page_list) + list(statement_page_list)] + list(pos_page_list) )
 	
 
 # Lifted this almost directly from David Kane's work
 def detect_lines(page_df, x_tolerance=0):
-    """
-    Detect lines in the csv of a page, returned by Tesseract
-    """
-    words_df = page_df[page_df['word_num'] > 0]
-    page_stats = page_df.iloc[0, :]
-    
-    row_ranges = []
-    this_range = []
-    
-    # Iterate through every vertical pixel position, top (0) to bottom (height)
-    for i in range(page_stats['height']):
-        result = (( words_df['bottom'] >= i ) & ( words_df['top'] <= i )).sum() > 0
-        
-        # Append vertical pixels aligned with words to this_range
-        if result:
-            this_range.append(i)
-        
-        # If we've passed out of an "occupied" range, append the resulting range to a list to store
-        else:
-            if this_range:
-                row_ranges.append(this_range)
-            this_range = []
-        
-    # Create bounding boxes for convenience
-    return[{"left":0, "right":page_stats['width'], "top":min(r), "bottom":max(r)} for r in row_ranges]
-    
+	"""
+	Detect lines in the csv of a page, returned by Tesseract
+	"""
+	words_df = page_df[page_df['word_num'] > 0]
+	page_stats = page_df.iloc[0, :]
+	
+	row_ranges = []
+	this_range = []
+	
+	# Clean up the words list, removing blank entries and null values that can arise
+	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip() != "")]
+	words_df = words_df[words_df['text'].apply(lambda x: str(x).strip("|") != "")]
+	words_df = words_df[words_df['text'].isnull() ==False]
+	
+	# Iterate through every vertical pixel position, top (0) to bottom (height)
+	for i in range(page_stats['height']):
+		result = (( words_df['bottom'] >= i ) & ( words_df['top'] <= i )).sum() > 0
+		
+		# Append vertical pixels aligned with words to this_range
+		if result:
+			this_range.append(i)
+		
+		# If we've passed out of an "occupied" range, append the resulting range to a list to store
+		else:
+			if this_range:
+				row_ranges.append(this_range)
+			this_range = []
+		
+	# Create bounding boxes for convenience
+	return[{"left":0, "right":page_stats['width'], "top":min(r), "bottom":max(r)} for r in row_ranges]
+	
 
 def extract_lines(page_df, lines):
-    
-    # Look, dark magic!
-    finance_regex = r'(.*)\s+(\(?\-?[\,0-9]+\)?)\s+(\(?\-?[\,0-9]+\)?)$'
-    
-    words_df = page_df[page_df['word_num'] > 0]
-    
-    raw_lines = []
-    results = pd.DataFrame()
-    for line in lines:
-        
-        # Retrieve all text in line
-        inline = (words_df['bottom'] <= line['bottom']) & (words_df['top'] >= line['top'])
-        line_text = " ".join([str(x) for x in words_df[inline]['text']] )
-        raw_lines.append(line_text)
-        
-        # Perform an incredibly complex regex search to extract right-most two numbers and the label
-        result = re.match(finance_regex, line_text)
-        
-        # Retrieve the NN's confidence in its translations
-        confidences = list(words_df[inline]['conf'])
-        
-        if result:
-            
-            # Check if label is a continuation, if so, append text from last line
-            if re.match(r'^[a-z]',re.sub("[0-9]", "", result.groups()[0]).strip()[0]):
-                label = raw_lines[-2] + " " + re.sub("[0-9]", "", result.groups()[0]).strip()
-            else:
-                label = re.sub("[0-9]", "", result.groups()[0]).strip()
-            
-            results = results.append({"label":label,
-									  "value":result.groups()[1],
-                                      "currYr":True,
-                                      "source":line_text,
-                                      "conf":confidences[-1]},
-                                     ignore_index=True)
-            
-            results = results.append({"label":label,
-									  "value":result.groups()[2],
-                                      "currYr":False,
-                                      "source":line_text,
-                                      "conf":confidences[-2]},
-                                     ignore_index=True)
-    return(results)
+	
+	# Look, dark magic!
+	finance_regex = r'(.*)\s+(\(?\-?[\,0-9]+\)?)\s+(\(?\-?[\,0-9]+\)?)$'
+	
+	words_df = page_df[page_df['word_num'] > 0]
+	
+	raw_lines = []
+	results = pd.DataFrame()
+	for line in lines:
+		
+		# Retrieve all text in line
+		inline = (words_df['bottom'] <= line['bottom']) & (words_df['top'] >= line['top'])
+		line_text = " ".join([str(x) for x in words_df[inline]['text']] )
+		
+		# Remove any character that isn't a letter, a number or a period
+		line_text = re.sub(r'[^a-zA-Z0-9. +]', "", line_text)
+		raw_lines.append(line_text)
+		
+		# Perform an incredibly complex regex search to extract right-most two numbers and the label
+		result = re.match(finance_regex, line_text)
+		
+		# Retrieve the NN's confidence in its translations
+		confidences = list(words_df[inline]['conf'])
+		
+		if result:
+			
+			try:
+				# Check if label is a continuation, if so, append text from last line
+				if re.match(r'^[a-z]',re.sub("[0-9]", "", result.groups()[0]).strip()[0]):
+					label = raw_lines[-2] + " " + re.sub("[0-9]", "", result.groups()[0]).strip()
+				else:
+					label = re.sub("[0-9]", "", result.groups()[0]).strip()
+			
+				results = results.append({"label":label,
+										"value":result.groups()[1],
+										"currYr":True,
+										"source":line_text,
+										"conf":confidences[-1]},
+										ignore_index=True)
+			
+				results = results.append({"label":label,
+										"value":result.groups()[2],
+										"currYr":False,
+										"source":line_text,
+										"conf":confidences[-2]},
+										ignore_index=True)
+			except:
+				print("Failed to process line: " + line_text)
+	
+	return(results)
 
 
 def process_OCR_csv(data):
