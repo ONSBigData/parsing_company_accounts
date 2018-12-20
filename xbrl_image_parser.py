@@ -231,6 +231,9 @@ def extract_lines(page_df, lines):
         # Perform an incredibly complex regex search to extract right-most two numbers and the label
         result = re.match(finance_regex, line_text)
         
+        # Retrieve the NN's confidence in its translations
+        confidences = list(words_df[inline]['conf'])
+        
         if result:
             
             # Check if label is a continuation, if so, append text from last line
@@ -240,9 +243,17 @@ def extract_lines(page_df, lines):
                 label = re.sub("[0-9]", "", result.groups()[0]).strip()
             
             results = results.append({"label":label,
-                                      "currYr":result.groups()[1],
-                                      "lastYr":result.groups()[2],
-                                      "source":line_text},
+									  "value":result.groups()[1],
+                                      "currYr":True,
+                                      "source":line_text,
+                                      "conf":confidences[-1]},
+                                     ignore_index=True)
+            
+            results = results.append({"label":label,
+									  "value":result.groups()[2],
+                                      "currYr":False,
+                                      "source":line_text,
+                                      "conf":confidences[-2]},
                                      ignore_index=True)
     return(results)
 
@@ -276,7 +287,7 @@ def process_OCR_csv(data):
 	years = determine_years_count(data)
 	units = determine_units_count(data)
 	
-	results['year'] = years.max()
+	results['year'] = np.where(results['currYr']==True, years.max(), years.min())
 	results['unit'] = units[0]
 	
 	return( results )
