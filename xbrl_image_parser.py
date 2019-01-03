@@ -18,6 +18,8 @@ process.
 
 """
 
+# General
+import sys
 import os
 import re
 
@@ -26,6 +28,114 @@ import pandas as pd
 
 from datetime import datetime
 from dateutil import parser
+
+# For image processing
+import pytesseract
+import cv2
+import PyPDF2
+import io
+
+from wand.image import Image
+from PIL import Image as im
+import codecs
+
+
+def pdf_to_png(filepath):
+	"""
+	Convert PDF to PNG image using Cairo reader/converter in linux CM
+	"""
+	destination_filepath = filepath.replace(".pdf", "")
+	
+	os.system("pdftocairo -r 300 -png " + filepath + " " + destination_filepath)
+	
+	return(destination_filepath)
+	
+
+def pre_process(png_filepath):
+	"""
+	Image pre-processing entails finding all of the png image files and
+	applying a number of cleaning steps to them.
+	"""
+	#find all of the converted pages
+	filename = png_filepath.split("/")[-1]
+	filepath = png_filepath.replace(filename, "")
+	
+	print(filepath, filename)
+	
+	png_files = [pngname for pngname in os.listdir(filepath) if (filename in pngname) & (".png" in pngname)]
+	
+	for pngname in png_files:
+		print("Processing " + pngname)
+		
+		# Read in as greyscale
+		concatenated = cv2.imread(filepath + "/" + pngname, 0)
+	
+		# Threshold image to black/white (threshold = 127 I presume)
+		num, grey_composite = cv2.threshold(concatenated, 127, 255, cv2.THRESH_BINARY)
+		print(grey_composite)
+		
+		# inverting the image for morphological operations
+		inverted_composite = 255-grey_composite
+	
+		# Perform closing, dilation followed by erosion
+		kernel = np.ones((2,2), np.uint8) 
+		closed_composite = cv2.morphologyEx(inverted_composite, cv2.MORPH_CLOSE, kernel)
+		
+		# Undo inversion
+		closed_composite = 255-closed_composite
+		
+		# Write over original with processed version
+		cv2.imwrite(filepath + "/" + pngname, closed_composite)
+		
+	return(filepath + "/" + pngname for pngname in png_files)
+	
+	
+def ocr_pdf(filepath):
+	"""
+	Given a pdf file, fixes it, pre-processes it and then applies OCR to
+	it.
+	"""
+	
+	# Process single PDF to multiple png files of individual pages
+	png_filepath = pdf_to_png(filepath)
+	
+	# preprocess all images and pass out list of individual filepaths
+	png_filepaths = pre_process(png_filepath)
+	
+	# Apply OCR to every page
+	csv_filepaths = []
+	
+	for pngpath in png_filepaths:
+		csvpath = pngpath.strip(".png") + "_ocr_dat.csv"
+		csv_filepaths.append(csvpath)
+		
+		with open(csvpath, "w") as f:
+			f.write(pytesseract.image_to_data(Im.open(pngpath)))
+		
+		print("OCR'ed " + pngpath)
+	
+	# Compile collection of csv files into a single file for the document
+	doc_df = pd.DataFrame()
+	csv_num = 1
+	
+	for csvpath in csv_filepaths:
+		
+		try:
+			page_df = pd.read_csv(csvpath, sep=' |\t', error_bad_lines=False, engine='python')
+			page_df['csv_num'] = csv_num
+			
+			doc_df = doc_df.append(df_page)
+			csv_num += 1
+		
+		except:
+			print("Failed on " + csvpath)
+			csv_num += 1
+	
+	# Cleanup - delete all of the generated csv and png files...
+	for filepath in png_filepaths + csv_filepaths:
+		os.system("rm " + filepath)
+		
+	return(doc_df)
 
 
 def make_measurements(data):
