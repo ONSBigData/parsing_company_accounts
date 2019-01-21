@@ -22,6 +22,15 @@ from datetime import datetime
 from dateutil import parser
 from bs4 import BeautifulSoup as BS  # Can parse xml or html docs
 
+# Table of variables and values that indicate consolidated status
+consolidation_var_table = {
+    "includedinconsolidationsubsidiary":True,
+    "investmententityrequiredtoapplyexceptionfromconsolidationtruefalse":True,
+    "subsidiaryunconsolidatedtruefalse":False,
+    "descriptionreasonwhyentityhasnotpreparedconsolidatedfinancialstatements":"exist",
+    "consolidationpolicy":"exist"
+    }
+
 
 def clean_value(string):
 	"""
@@ -40,7 +49,7 @@ def clean_value(string):
 		pass
 	
 	return(string)
-
+	
 
 def retrieve_from_context(soup, contextref):
 	"""
