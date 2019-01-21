@@ -97,6 +97,7 @@ def ocr_pdf(filepath):
 	
 	# Process single PDF to multiple png files of individual pages
 	print("Converting PDF image to multiple png files")
+	print(filepath)
 	png_filepath = pdf_to_png(filepath)
 	
 	# preprocess all images and pass out list of individual filepaths
@@ -373,10 +374,11 @@ def extract_lines(page_df, lines):
 	return(results)
 
 
-def process_OCR_csv(data):
+def process_PDF(filepath):
 	"""
 	Call all the functions, get all the data...
 	"""
+	data = ocr_pdf(filepath)
 	
 	# Do some geometry (eg; calculate specific coords of "bottom")
 	data = make_measurements(data)
