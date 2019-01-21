@@ -35,6 +35,7 @@ import cv2
 import PyPDF2
 import io
 
+from io import StringIO
 from wand.image import Image
 from PIL import Image as im
 import codecs
@@ -65,14 +66,12 @@ def pre_process(png_filepath):
 	png_files = [pngname for pngname in os.listdir(filepath) if (filename in pngname) & (".png" in pngname)]
 	
 	for pngname in png_files:
-		print("Processing " + pngname)
 		
 		# Read in as greyscale
 		concatenated = cv2.imread(filepath + "/" + pngname, 0)
 	
 		# Threshold image to black/white (threshold = 127 I presume)
 		num, grey_composite = cv2.threshold(concatenated, 127, 255, cv2.THRESH_BINARY)
-		print(grey_composite)
 		
 		# inverting the image for morphological operations
 		inverted_composite = 255-grey_composite
@@ -85,11 +84,11 @@ def pre_process(png_filepath):
 		closed_composite = 255-closed_composite
 		
 		# Write over original with processed version
-		cv2.imwrite(filepath + "/" + pngname, closed_composite)
+		cv2.imwrite(filepath + pngname, closed_composite)
 		
-	return(filepath + "/" + pngname for pngname in png_files)
-	
-	
+	return([filepath + pngname for pngname in png_files])
+
+
 def ocr_pdf(filepath):
 	"""
 	Given a pdf file, fixes it, pre-processes it and then applies OCR to
@@ -97,46 +96,42 @@ def ocr_pdf(filepath):
 	"""
 	
 	# Process single PDF to multiple png files of individual pages
+	print("Converting PDF image to multiple png files")
 	png_filepath = pdf_to_png(filepath)
 	
 	# preprocess all images and pass out list of individual filepaths
+	print("Performing pre-processing on all png images")
 	png_filepaths = pre_process(png_filepath)
 	
+	print(png_filepaths)
+	
 	# Apply OCR to every page
-	csv_filepaths = []
-	
-	for pngpath in png_filepaths:
-		csvpath = pngpath.strip(".png") + "_ocr_dat.csv"
-		csv_filepaths.append(csvpath)
-		
-		with open(csvpath, "w") as f:
-			f.write(pytesseract.image_to_data(Im.open(pngpath)))
-		
-		print("OCR'ed " + pngpath)
-	
-	# Compile collection of csv files into a single file for the document
 	doc_df = pd.DataFrame()
 	csv_num = 1
 	
-	for csvpath in csv_filepaths:
-		
+	for pngpath in png_filepaths:
 		try:
-			page_df = pd.read_csv(csvpath, sep=' |\t', error_bad_lines=False, engine='python')
-			page_df['csv_num'] = csv_num
-			
-			doc_df = doc_df.append(df_page)
-			csv_num += 1
+			page_df = pd.read_csv(StringIO(pytesseract.image_to_data(im.open(pngpath))),
+									sep=' |\t',
+									error_bad_lines=False,
+									engine='python')
 		
+			page_df['csv_num'] = csv_num
+		
+			doc_df = doc_df.append(page_df)
+			csv_num += 1
+			print("OCR'ed " + pngpath)
+			
 		except:
-			print("Failed on " + csvpath)
+			print("Failed on " + pngpath)
 			csv_num += 1
 	
 	# Cleanup - delete all of the generated csv and png files...
-	for filepath in png_filepaths + csv_filepaths:
+	for filepath in png_filepaths:
 		os.system("rm " + filepath)
 		
 	return(doc_df)
-
+	
 
 def make_measurements(data):
 	"""
