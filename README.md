@@ -62,21 +62,19 @@ are set up for a linux machine.
 The example PDF's, drawn randomly from Companies House a while back, are
 in example_data_PDF directory.
 
-02_process_pdfs_to_data.ipynb uses Tesseract to "read" a pdf and convert it
+03_Extract_PDF_data.ipynb uses Tesseract to "read" a pdf and convert it
 to a table of words with locations and confidences in the translation.  
-There's a lot in that notebook that  pre-processes images and fixes
-some quirks with how the PDF's are encoded.
+All the extraction code is now hidden in xbrl_image_parser.py.
 
-03_Extract_PDF_data gathers variables from the balance sheet entries in
+The program gathers variables from the balance sheet entries in
 the PDF by first narrowing to the pages likely to BE the balance sheet,
 then using a sophisticated regex (from https://github.com/drkane) to 
 get lines formatted with <some text> <number> <number> (simplified).
-I'm now working on reliably extracting the reporting unit from the PDF by
-searching for the most common element starting with £, $, EUR, and 
-whatever number of zeros after it.
+The reporting unit (eg; £, £000, $) is discovered by finding the most 
+common currency unit followed or not by zeroes.
 
 I'm assuming the dates of the records can be determined from metadata on
-the Companies House API, but haven't actually checked...
+the Companies House API, but haven't actually checked.
 
 
 # To be fixed;
@@ -84,11 +82,6 @@ the Companies House API, but haven't actually checked...
 "parsed" field should be False if no elements extracted from document. 
 Currently it's False only if the document can't be opened in the first 
 place.
-
-On switching to more elegant method of iterating through elements
-regardless of doc format, number of records with less than 5 numerical
-elements increased from 0.5 to 1 percent.  May be artefact of ingesting
-full years data but should be checked in case bug introduced.
 
 (For reference; num of records with few numerical entries has proven to
 be a good way of eyeballing data quality - there's too many edge cases 
