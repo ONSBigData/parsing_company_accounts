@@ -1,3 +1,6 @@
 .ipynb_checkpoints/
 working/
+api_requested_documents/
+output/
 __pycache__/
+CH_api_key.txt
