@@ -40,6 +40,8 @@ from wand.image import Image
 from PIL import Image as im
 import codecs
 
+# Disable an annoying (and superfluous) warning
+pd.options.mode.chained_assignment = None
 
 def pdf_to_png(filepath):
 	"""
@@ -60,8 +62,6 @@ def pre_process(png_filepath):
 	#find all of the converted pages
 	filename = png_filepath.split("/")[-1]
 	filepath = png_filepath.replace(filename, "")
-	
-	print(filepath, filename)
 	
 	png_files = [pngname for pngname in os.listdir(filepath) if (filename in pngname) & (".png" in pngname)]
 	
@@ -97,13 +97,12 @@ def ocr_pdf(filepath):
 	
 	# Process single PDF to multiple png files of individual pages
 	print("Converting PDF image to multiple png files")
+	print(filepath)
 	png_filepath = pdf_to_png(filepath)
 	
 	# preprocess all images and pass out list of individual filepaths
 	print("Performing pre-processing on all png images")
 	png_filepaths = pre_process(png_filepath)
-	
-	print(png_filepaths)
 	
 	# Apply OCR to every page
 	doc_df = pd.DataFrame()
@@ -120,7 +119,6 @@ def ocr_pdf(filepath):
 		
 			doc_df = doc_df.append(page_df)
 			csv_num += 1
-			print("OCR'ed " + pngpath)
 			
 		except:
 			print("Failed on " + pngpath)
@@ -212,6 +210,9 @@ def aggregate_sentences_over_lines(dat):
 	starts with a capital letter or not.
 	"""
 	
+	# Drop empty entries with no text
+	dat = dat[dat['text'].isnull() == False]
+	
 	dat_group = dat[dat['numerical'].isnull()]
 	
 	dat_group = dat_group.groupby(["csv_num", "block_num",  "par_num", "line_num"])
@@ -270,7 +271,7 @@ def find_balance_sheet_pages(data):
 	
 	# Create a table with aggregated sentences over lines
 	agg_text = aggregate_sentences_over_lines(data)
-
+	
 	# Get a list of pages likely to be balance sheets
 	BS_page_list = pd.unique(agg_text[agg_text['text'].apply(lambda x: np.where( re.search( "^[abbreviated]*balancesheet", x ), True, False))]['csv_num'])
 	
@@ -373,10 +374,11 @@ def extract_lines(page_df, lines):
 	return(results)
 
 
-def process_OCR_csv(data):
+def process_PDF(filepath):
 	"""
 	Call all the functions, get all the data...
 	"""
+	data = ocr_pdf(filepath)
 	
 	# Do some geometry (eg; calculate specific coords of "bottom")
 	data = make_measurements(data)
@@ -407,3 +409,5 @@ def process_OCR_csv(data):
 	
 	return( results )
 	
+
+
