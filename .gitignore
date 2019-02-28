@@ -1,3 +1,7 @@
 .ipynb_checkpoints/
 working/
+api_requested_documents/
+output/CH_no_digital_records.csv
+output/CH_no_digital_records_searched.csv
+CH_api_key.txt
 __pycache__/
